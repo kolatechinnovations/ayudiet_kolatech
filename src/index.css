@@ -1,0 +1,248 @@
+:root {
+  --primary-color: #2c5f50;
+  /* Deep Ayurvedic Green */
+  --secondary-color: #f4e8d1;
+  /* Soft Parchment */
+  --accent-color: #d4a373;
+  /* Warm Sand */
+  --text-dark: #2d2d2d;
+  --text-light: #555555;
+  --bg-light: #fdfaf5;
+  --white: #ffffff;
+  --v-color: #3a86ff;
+  /* Vata - Air - Blue */
+  --p-color: #ef476f;
+  /* Pitta - Fire - Red/Pink */
+  --k-color: #06d6a0;
+  /* Kapha - Earth/Water - Green */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --border-radius: 16px;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.4s ease;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.question-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.options-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.option-card {
+  padding: 1.2rem;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  background: transparent;
+  width: 100%;
+}
+
+.option-card:hover {
+  border-color: var(--primary-color);
+  background: rgba(44, 95, 80, 0.05);
+}
+
+.option-card.selected {
+  border-color: var(--primary-color);
+  background: rgba(44, 95, 80, 0.1);
+  box-shadow: 0 4px 12px rgba(44, 95, 80, 0.1);
+}
+
+.wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.score-card {
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+}
+
+.score-card.vata {
+  background: var(--v-color);
+}
+
+.score-card.pitta {
+  background: var(--p-color);
+}
+
+.score-card.kapha {
+  background: var(--k-color);
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.score-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.type-banner {
+  background: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.type-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem auto;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .wizard-footer {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
