@@ -24,32 +24,40 @@ A full-stack application that uses facial recognition and an assessment wizard t
    npm run dev
    ```
 
-### 2. Backend Setup (Python)
+### 2. Backend Setup (Flask & Python)
 
-To run the AI face scan backend, follow these steps:
+If you are a React developer and haven't used Python before, follow these exact commands in your terminal at the root of the project:
 
-1. **Create a Virtual Environment** (Recommended):
+1. **Check if Python is installed**: Open your terminal and run `python --version` or `python3 --version`.
+2. **Create a Virtual Environment**:
    ```powershell
    python -m venv venv
    ```
-2. **Activate the Virtual Environment**:
-   - On Windows:
+3. **Activate the Virtual Environment**:
+   - **Windows (PowerShell)**:
      ```powershell
      .\venv\Scripts\activate
      ```
-   - On Mac/Linux:
+   - **Windows (Command Prompt)**:
+     ```cmd
+     venv\Scripts\activate
+     ```
+   - **Mac/Linux**:
      ```bash
      source venv/bin/activate
      ```
-3. **Install Dependencies**:
+4. **Install all dependencies** (This is the `pip` command you need):
    ```bash
    pip install -r requirements.txt
    ```
-4. **Run the Flask Backend**:
+5. **Run the Flask Backend**:
    ```bash
    python backend/app.py
    ```
    The backend will run on `http://localhost:5000`.
+
+> [!TIP]
+> **React Developer Note**: Think of `pip install -r requirements.txt` like `npm install`. It installs all the Python libraries listed in the `requirements.txt` file into your virtual environment.
 
 ---
 
