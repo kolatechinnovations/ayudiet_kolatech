@@ -29,6 +29,15 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
     return initial;
   });
 
+  const autoFillAll = () => {
+    const randomAnswers = questions.map(q => {
+      const randomIndex = Math.floor(Math.random() * q.options.length);
+      return q.options[randomIndex];
+    });
+    setAnswers(randomAnswers);
+    setCurrentIndex(questions.length - 1);
+  };
+
   const currentQuestion = questions[currentIndex];
   const currentSection = sections.find(s => s.id === currentQuestion.section);
   
@@ -62,8 +71,22 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
         <div className="progress-bar" style={{ width: `${progress}%` }}></div>
       </div>
 
-      <div className="section-badge">
-        Section {currentSection.id}: {currentSection.title}
+      <div className="section-badge" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span>Section {currentSection.id}: {currentSection.title}</span>
+        <button 
+          onClick={autoFillAll}
+          style={{ 
+            background: 'rgba(255,255,255,0.1)', 
+            border: 'none', 
+            color: 'var(--text-light)', 
+            fontSize: '0.7rem', 
+            cursor: 'pointer',
+            padding: '2px 8px',
+            borderRadius: '4px'
+          }}
+        >
+          DEBUG: Auto-fill All
+        </button>
       </div>
 
       <div className="question-container">

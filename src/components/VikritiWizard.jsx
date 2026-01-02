@@ -95,7 +95,7 @@ const VikritiWizard = ({ onComplete }) => {
           allAnswers[sec.id] = secAnswers;
       });
       setAnswers(allAnswers);
-      onComplete(allAnswers);
+      setCurrentSectionIndex(vikritiSections.length - 1);
   };
 
   return (
@@ -123,20 +123,20 @@ const VikritiWizard = ({ onComplete }) => {
       </div>
 
       <div className="question-container">
-        <p className="instruction-text" style={{ marginBottom: '2rem', fontSize: '1.1rem', color: 'var(--text-light)' }}>
+        <p className="instruction-text">
             {section.type === 'multi-intensity' && "Select the intensity of symptoms you experience recently (last 2-4 weeks)."}
             {section.type === 'ranking' && "Which pattern fits your digestion most? Choose one primary (Dominant) and one secondary."}
             {section.type === 'single' && "Select the current dominant climate/environment."}
             {section.type === 'multi' && "Select all applicable lifestyle factors."}
         </p>
 
-        <div className="vikriti-items-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+        <div className="vikriti-items-list" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {questions.map((q) => {
               const currentVal = (answers[section.id] || {})[q.id] || 0;
               
               return (
                 <div key={q.id} className="vikriti-item">
-                    <div style={{ marginBottom: '1rem' }}>
+                    <div className="vikriti-item-header">
                         <div style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-dark)' }}>{q.label}</div>
                         {q.reason && <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', marginTop: '2px' }}>{q.reason}</div>}
                     </div>
