@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import AssessmentWizard from './components/AssessmentWizard';
 import ResultsDisplay from './components/ResultsDisplay';
+import FaceScanner from './components/FaceScanner';
 import VikritiWizard from './components/VikritiWizard';
 import { calculatePrakriti, calculateVikriti } from './utils/scoringLogic';
 
 function App() {
-  const [stage, setStage] = useState('welcome'); // welcome, assessment, results, vikriti, final_results
+  const [stage, setStage] = useState('welcome'); // welcome, scanner, assessment, results, vikriti, final_results
   const [prakritiResult, setPrakritiResult] = useState(null);
   const [vikritiResult, setVikritiResult] = useState(null);
+  const [preFilledAnswers, setPreFilledAnswers] = useState(null);
 
   const startAssessment = () => {
+    setStage('scanner');
+  };
+
+  const handleScanComplete = (scanData) => {
+    setPreFilledAnswers(scanData);
+    setStage('assessment');
+  };
+
+  const skipScan = () => {
+    setPreFilledAnswers(null);
     setStage('assessment');
   };
 
@@ -55,8 +67,18 @@ function App() {
         </div>
       )}
 
+      {stage === 'scanner' && (
+        <FaceScanner 
+          onScanComplete={handleScanComplete} 
+          onCancel={skipScan} 
+        />
+      )}
+
       {stage === 'assessment' && (
-        <AssessmentWizard onComplete={handleAssessmentComplete} />
+        <AssessmentWizard 
+          onComplete={handleAssessmentComplete} 
+          initialScanData={preFilledAnswers}
+        />
       )}
 
       {stage === 'results' && prakritiResult && (
@@ -80,7 +102,7 @@ function App() {
       )}
 
       <footer style={{ marginTop: '4rem', textAlign: 'center', opacity: 0.5, fontSize: '0.8rem' }}>
-        &copy; 2026 Ayurveda Diet AI System • Stage 1 Prakriti Module
+        &copy; 2026 Ayurveda Diet AI System • Full Prakriti & Vikriti Module
       </footer>
     </div>
   );
