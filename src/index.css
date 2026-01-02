@@ -103,6 +103,49 @@ header p {
   color: var(--white);
 }
 
+.btn-sm {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-light);
+}
+
+.btn-sm:hover {
+  border-color: var(--primary-color);
+  background: rgba(44, 95, 80, 0.05);
+}
+
+.btn-sm.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(44, 95, 80, 0.2);
+}
+
+.vikriti-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.vikriti-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.intensity-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .progress-container {
   width: 100%;
   height: 8px;

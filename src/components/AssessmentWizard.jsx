@@ -30,6 +30,15 @@ const AssessmentWizard = ({ onComplete }) => {
     }
   };
 
+  const autoFill = () => {
+    const filledAnswers = questions.map(q => {
+      const randomIndex = Math.floor(Math.random() * q.options.length);
+      return q.options[randomIndex];
+    });
+    setAnswers(filledAnswers);
+    onComplete(filledAnswers);
+  };
+
   const canNext = answers[currentIndex] !== null;
 
   return (
@@ -38,8 +47,22 @@ const AssessmentWizard = ({ onComplete }) => {
         <div className="progress-bar" style={{ width: `${progress}%` }}></div>
       </div>
 
-      <div className="section-badge">
-        Section {currentSection.id}: {currentSection.title}
+      <div className="section-badge" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span>Section {currentSection.id}: {currentSection.title}</span>
+        <button 
+          onClick={autoFill}
+          style={{ 
+            background: 'rgba(255,255,255,0.1)', 
+            border: 'none', 
+            color: 'var(--text-light)', 
+            fontSize: '0.7rem', 
+            cursor: 'pointer',
+            padding: '2px 8px',
+            borderRadius: '4px'
+          }}
+        >
+          DEBUG: Auto-fill
+        </button>
       </div>
 
       <div className="question-container">

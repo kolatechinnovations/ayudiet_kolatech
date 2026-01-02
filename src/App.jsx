@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
 import AssessmentWizard from './components/AssessmentWizard';
 import ResultsDisplay from './components/ResultsDisplay';
-import { calculatePrakriti } from './utils/scoringLogic';
+import VikritiWizard from './components/VikritiWizard';
+import { calculatePrakriti, calculateVikriti } from './utils/scoringLogic';
 
 function App() {
-  const [stage, setStage] = useState('welcome'); // welcome, assessment, results
-  const [result, setResult] = useState(null);
+  const [stage, setStage] = useState('welcome'); // welcome, assessment, results, vikriti, final_results
+  const [prakritiResult, setPrakritiResult] = useState(null);
+  const [vikritiResult, setVikritiResult] = useState(null);
 
   const startAssessment = () => {
     setStage('assessment');
   };
 
   const handleAssessmentComplete = (answers) => {
-    const prakritiResult = calculatePrakriti(answers);
-    setResult(prakritiResult);
+    const res = calculatePrakriti(answers);
+    setPrakritiResult(res);
     setStage('results');
   };
 
+  const startVikriti = () => {
+    setStage('vikriti');
+  };
+
+  const handleVikritiComplete = (answers) => {
+    const res = calculateVikriti(answers);
+    setVikritiResult(res);
+    setStage('final_results');
+  };
+
   const resetAssessment = () => {
-    setResult(null);
+    setPrakritiResult(null);
+    setVikritiResult(null);
     setStage('welcome');
   };
 
@@ -46,8 +59,24 @@ function App() {
         <AssessmentWizard onComplete={handleAssessmentComplete} />
       )}
 
-      {stage === 'results' && result && (
-        <ResultsDisplay result={result} onReset={resetAssessment} />
+      {stage === 'results' && prakritiResult && (
+        <ResultsDisplay 
+            result={prakritiResult} 
+            onReset={resetAssessment} 
+            onNext={startVikriti}
+        />
+      )}
+
+      {stage === 'vikriti' && (
+        <VikritiWizard onComplete={handleVikritiComplete} />
+      )}
+
+      {stage === 'final_results' && prakritiResult && vikritiResult && (
+        <ResultsDisplay 
+            result={prakritiResult} 
+            vikriti={vikritiResult}
+            onReset={resetAssessment} 
+        />
       )}
 
       <footer style={{ marginTop: '4rem', textAlign: 'center', opacity: 0.5, fontSize: '0.8rem' }}>
