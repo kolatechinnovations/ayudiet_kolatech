@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
 
-const FaceScanner = ({ onScanComplete, onCancel }) => {
+const NailScanner = ({ onScanComplete, onCancel }) => {
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ const FaceScanner = ({ onScanComplete, onCancel }) => {
     setError(null);
     
     try {
-      const response = await axios.post('http://localhost:5000/scan/face', {
+      const response = await axios.post('http://localhost:5000/scan/nails', {
         image: imgSrc
       });
       
@@ -42,14 +42,14 @@ const FaceScanner = ({ onScanComplete, onCancel }) => {
   const videoConstraints = {
     width: 640,
     height: 480,
-    facingMode: "user"
+    facingMode: "environment" // Back camera for macro/nails
   };
 
   return (
     <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
-      <h2 className="question-text">Step 1: Face Scan</h2>
+      <h2 className="question-text">Step 3: Nail Scan</h2>
       <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-        Capture a neutral front-facing photo. Ensure your forehead and face are clearly visible.
+        Take a close-up photo of your fingernails (one hand). Keep them in focus.
       </p>
 
       <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', backgroundColor: '#000', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem' }}>
@@ -60,15 +60,15 @@ const FaceScanner = ({ onScanComplete, onCancel }) => {
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
             onUserMediaError={() => setError("Webcam access denied. Please allow camera permissions.")}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scaleX(-1)' }} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         ) : (
-          <img src={imgSrc} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> // Removed scaleX(-1) for preview as screenshots are usually not mirrored by default in logic but webcam view is mirrored for UX. Actually standard webcam is mirrored, screenshot is not. Better to keep preview natural.
+          <img src={imgSrc} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         )}
         
         {loading && (
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-            Analyzing Face...
+            Analyzing Nails...
           </div>
         )}
       </div>
@@ -89,17 +89,13 @@ const FaceScanner = ({ onScanComplete, onCancel }) => {
           <>
             <button className="btn btn-outline" onClick={retake} disabled={loading}>Retake</button>
             <button className="btn btn-primary" onClick={handleScan} disabled={loading}>
-              {loading ? 'Processing...' : 'Confirm Face'}
+              {loading ? 'Processing...' : 'Confirm Nails'}
             </button>
           </>
         )}
       </div>
-
-      <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#94a3b8', textAlign: 'center' }}>
-        <strong>Privacy Note:</strong> Your photo is processed locally and not stored.
-      </p>
     </div>
   );
 };
 
-export default FaceScanner;
+export default NailScanner;

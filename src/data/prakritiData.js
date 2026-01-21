@@ -1,428 +1,750 @@
+
 export const sections = [
-  { id: 'A', title: 'Body Morphology & Structure' },
+  { id: 'A', title: 'Body Frame & Constitution' },
   { id: 'B', title: 'Head, Face & Features' },
-  { id: 'C', title: 'Skin, Hair, Nails, Lips, Teeth' },
-  { id: 'D', title: 'Appetite, Digestion, Food Habits' },
-  { id: 'E', title: 'Sleep & Energy' },
-  { id: 'F', title: 'Mental & Emotional Traits' },
-  { id: 'G', title: 'Activity Patterns' },
-  { id: 'H', title: 'Miscellaneous Lifestyle / Weather / Body' }
+  { id: 'C', title: 'Skin' },
+  { id: 'D', title: 'Hair' },
+  { id: 'E', title: 'Nails' },
+  { id: 'F', title: 'Teeth & Palate' },
+  { id: 'G', title: 'Lips, Palms & Soles' },
+  { id: 'H', title: 'Food & Digestion' },
+  { id: 'I', title: 'Physiological Functions' },
+  { id: 'J', title: 'Health & Environmental' },
+  { id: 'K', title: 'Speech, Movement & Mind' },
+  { id: 'L', title: 'Work & Social' }
 ];
 
 export const questions = [
-  // SECTION A
+  // --- Q1: Body Frame – Width ---
   {
-    id: 1, section: 'A', question: 'Body appearance',
+    id: 101, section: 'A', question: 'Overall Body Frame Width',
     options: [
-      { text: 'Slim', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 2 } },
-      { text: 'Large', score: { kapha: 2 } }
+      { text: 'Thin / Narrow', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Broad', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 2, section: 'A', question: 'Body weight',
+    id: 102, section: 'A', question: 'Shoulder Width',
     options: [
-      { text: 'Low', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 2 } },
-      { text: 'Overweight', score: { kapha: 2 } }
+      { text: 'Thin / Narrow', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Broad', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 3, section: 'A', question: 'Body build (bulk)',
+    id: 103, section: 'A', question: 'Chest Width',
     options: [
-      { text: 'Weakly developed', score: { vata: 2 } },
-      { text: 'Moderately developed', score: { pitta: 2 } },
-      { text: 'Well developed', score: { kapha: 2 } }
+      { text: 'Thin / Narrow', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Broad', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 4, section: 'A', question: 'Body musculature',
+    id: 104, section: 'A', question: 'Forehead Width',
     options: [
-      { text: 'Thin', score: { vata: 2 } },
-      { text: 'Soft/loose', score: { pitta: 1, kapha: 1 } },
-      { text: 'Firm', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 5, section: 'A', question: 'Chest',
-    options: [
-      { text: 'Flat/Sunken', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Expanded/Round', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 6, section: 'A', question: 'Belly',
-    options: [
-      { text: 'Thin/Flat', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Big/Potbellied', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 7, section: 'A', question: 'Bellybutton',
-    options: [
-      { text: 'Small/Irregular', score: { vata: 2 } },
-      { text: 'Oval/Superficial', score: { pitta: 1 } },
-      { text: 'Big/Deep', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 8, section: 'A', question: 'Hips',
-    options: [
-      { text: 'Slender/Thin', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Heavy/Big', score: { kapha: 2 } }
+      { text: 'Thin / Narrow', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Broad', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION B
+  // --- Q2: Body Frame – Length ---
   {
-    id: 9, section: 'B', question: 'Nose shape',
+    id: 201, section: 'A', question: 'Overall Body Height',
     options: [
-      { text: 'Uneven/Deviated', score: { vata: 2 } },
-      { text: 'Long/Pointed', score: { pitta: 1 } },
-      { text: 'Short/Rounded', score: { kapha: 2 } }
+      { text: 'Tall / Long', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Short', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 10, section: 'B', question: 'Eyes',
+    id: 202, section: 'A', question: 'Forehead Length',
     options: [
-      { text: 'Small/Sunken/Dry', score: { vata: 2 } },
-      { text: 'Sharp/Light-sensitive', score: { pitta: 1 } },
-      { text: 'Big/Calm', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 11, section: 'B', question: 'Chin shape',
-    options: [
-      { text: 'Thin/Angular', score: { vata: 2 } },
-      { text: 'Tapering', score: { pitta: 1 } },
-      { text: 'Rounded/Double', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 12, section: 'B', question: 'Cheeks',
-    options: [
-      { text: 'Wrinkled/Sunken', score: { vata: 2 } },
-      { text: 'Smooth/Flat', score: { pitta: 1 } },
-      { text: 'Rounded/Plump', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 13, section: 'B', question: 'Neck',
-    options: [
-      { text: 'Thin/Tall', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 1 } },
-      { text: 'Big/Folded', score: { kapha: 2 } }
+      { text: 'Long', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Short', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION C
+  // --- Q3: Size & Development ---
   {
-    id: 14, section: 'C', question: 'Skin behavior',
+    id: 301, section: 'A', question: 'Body Build',
     options: [
-      { text: 'Thin/Dry/Cold/Bumpy', score: { vata: 2 } },
-      { text: 'Temperate/Rosy', score: { pitta: 1 } },
-      { text: 'Thick/Oily/Cool', score: { kapha: 2 } }
+      { text: 'Weakly Developed', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderately Developed', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Well Developed', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 15, section: 'C', question: 'Skin color/complexion',
+    id: 302, section: 'B', question: 'Face Size / Development',
     options: [
-      { text: 'Cracked/Freckled', score: { vata: 2 } },
-      { text: 'Fair/Rosy', score: { pitta: 1 } },
-      { text: 'Dark/Pale', score: { kapha: 2 } }
+      { text: 'Small / Weakly Developed', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium / Moderately Developed', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Large / Well Developed', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 16, section: 'C', question: 'Hair texture',
+    id: 303, section: 'B', question: 'Eyes Size',
     options: [
-      { text: 'Dry/Brittle', score: { vata: 2 } },
-      { text: 'Straight/Thin', score: { pitta: 1 } },
-      { text: 'Thick/Oily/Wavy', score: { kapha: 2 } }
+      { text: 'Small', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Large', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 17, section: 'C', question: 'Scalp hair issues',
+    id: 304, section: 'B', question: 'Eyelashes',
     options: [
-      { text: 'Graying/Falling/Breaking', score: { vata: 2 } },
-      { text: 'Seasonal change', score: { pitta: 1 } },
-      { text: 'None/Thick', score: { kapha: 2 } }
+      { text: 'Thin / Sparse', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Long / Thick / Dense', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 18, section: 'C', question: 'Nail texture',
+    id: 305, section: 'A', question: 'Joints Size',
     options: [
-      { text: 'Brittle/Cracked', score: { vata: 2 } },
-      { text: 'Normal/Flexible', score: { pitta: 1 } },
-      { text: 'Smooth/Oily', score: { kapha: 2 } }
+      { text: 'Thin / Narrow', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Large / Broad', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 19, section: 'C', question: 'Lips',
+    id: 306, section: 'G', question: 'Lips Size',
     options: [
-      { text: 'Dry/Cracked', score: { vata: 2 } },
-      { text: 'Red/Inflamed', score: { pitta: 1 } },
-      { text: 'Smooth/Oily', score: { kapha: 2 } }
+      { text: 'Small', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Large', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
   {
-    id: 20, section: 'C', question: 'Teeth',
+    id: 307, section: 'E', question: 'Nails Size',
     options: [
-      { text: 'Thin gums/Irregular', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'White/Strong', score: { kapha: 2 } }
-    ]
-  },
-
-  // SECTION D
-  {
-    id: 21, section: 'D', question: 'Appetite regularity',
-    options: [
-      { text: 'Irregular', score: { vata: 2 } },
-      { text: 'Strong', score: { pitta: 2 } },
-      { text: 'Slow/Steady', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 22, section: 'D', question: 'Appetite frequency',
-    options: [
-      { text: 'Frequent', score: { pitta: 2 } },
-      { text: 'Infrequent', score: { vata: 2 } },
-      { text: 'Steady', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 23, section: 'D', question: 'Taste preference',
-    options: [
-      { text: 'Sweet/Sour/Salty', score: { kapha: 1, pitta: 1 } },
-      { text: 'Sweet/Bitter/Astringent', score: { pitta: 2 } },
-      { text: 'Bitter/Pungent/Astringent', score: { vata: 2 } }
-    ]
-  },
-  {
-    id: 24, section: 'D', question: 'Preference food temp',
-    options: [
-      { text: 'Cold', score: { vata: 2 } },
-      { text: 'Warm', score: { pitta: 1 } },
-      { text: 'Any/None', score: {} }
-    ]
-  },
-  {
-    id: 25, section: 'D', question: 'Food quantity on hunger',
-    options: [
-      { text: 'Low', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 1 } },
-      { text: 'High', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 26, section: 'D', question: 'Ability to digest recent meal',
-    options: [
-      { text: 'Easy', score: { pitta: 1 } },
-      { text: 'Need effort', score: { vata: 1 } },
-      { text: 'Always difficult', score: { kapha: 1 } }
-    ]
-  },
-  {
-    id: 27, section: 'D', question: 'Preference for fatty foods',
-    options: [
-      { text: 'Butter/Ghee', score: { kapha: 2, pitta: 1 } },
-      { text: 'Animal Fat/Oil', score: { kapha: 2 } },
-      { text: 'None', score: {} }
-    ]
-  },
-  {
-    id: 28, section: 'D', question: 'Bowel habits',
-    options: [
-      { text: 'Constipation', score: { vata: 2 } },
-      { text: 'Loose motions', score: { pitta: 1 } },
-      { text: 'Thick/Sluggish', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 29, section: 'D', question: 'Stool consistency',
-    options: [
-      { text: 'Hard', score: { vata: 2 } },
-      { text: 'Loose', score: { pitta: 1 } },
-      { text: 'Soft/Oily', score: { kapha: 2 } }
+      { text: 'Small', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Long', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION E
+  // --- Q4: Musculature ---
   {
-    id: 30, section: 'E', question: 'Sleep amount',
+    id: 401, section: 'A', question: 'Body Musculature',
     options: [
-      { text: 'Less (<6h)', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Heavy (>8h)', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 31, section: 'E', question: 'Sleep initiation',
-    options: [
-      { text: 'Immediate', score: { kapha: 1 } },
-      { text: 'Takes time', score: { vata: 2 } },
-      { text: 'Hard', score: { pitta: 1 } }
-    ]
-  },
-  {
-    id: 32, section: 'E', question: 'Sleep quality',
-    options: [
-      { text: 'Deep', score: { kapha: 2 } },
-      { text: 'Moderate/Sound', score: { pitta: 1 } },
-      { text: 'Shallow', score: { vata: 2 } }
-    ]
-  },
-  {
-    id: 33, section: 'E', question: 'Perspiration level',
-    options: [
-      { text: 'Profuse', score: { pitta: 2 } },
-      { text: 'Moderate', score: {} },
-      { text: 'Less', score: { vata: 2 } }
+      { text: 'Thin', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Soft & Loosely Knitted', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Smooth & Firmly Knitted', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION F
+  // --- Q5: Skin Features ---
   {
-    id: 34, section: 'F', question: 'Mental activity',
+    id: 501, section: 'C', question: 'Skin Appearance (Select all that apply)',
+    allowMultiple: true,
     options: [
-      { text: 'Hyperactive', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Dull/Slow', score: { kapha: 2 } }
+      { text: 'Cracked', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Wrinkled', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Prominent Veins', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Pimples', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Freckles', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Marks', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Moles', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Lustrous', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Clear', score: { vata: 0, pitta: 1, kapha: 1 } }
     ]
   },
   {
-    id: 35, section: 'F', question: 'Emotional style',
+    id: 502, section: 'C', question: 'Skin Nature',
     options: [
-      { text: 'Anxiety/Fear', score: { vata: 2 } },
-      { text: 'Anger/Jealousy', score: { pitta: 2 } },
-      { text: 'Calm/Attachment', score: { kapha: 2 } }
+      { text: 'Dry', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Oily', score: { vata: 0, pitta: 1, kapha: 2 } },
+      { text: 'Normal', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Seasonal / Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
     ]
   },
   {
-    id: 36, section: 'F', question: 'IQ/Intellect style',
+    id: 503, section: 'C', question: 'Skin Texture',
     options: [
-      { text: 'Quick but faulty', score: { vata: 2 } },
-      { text: 'Accurate response', score: { pitta: 2 } },
-      { text: 'Slow & exact', score: { kapha: 2 } }
+      { text: 'Rough', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Smooth', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Coarse', score: { vata: 1, pitta: 1, kapha: 0 } }
     ]
   },
   {
-    id: 37, section: 'F', question: 'Recollection type',
+    id: 504, section: 'C', question: 'Skin Color',
     options: [
-      { text: 'Recent good/Remote poor', score: { vata: 2 } },
-      { text: 'Distinct', score: { pitta: 2 } },
-      { text: 'Slow/Sustained', score: { kapha: 2 } }
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Fair Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Fair Pink', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Wheatish', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Dusky', score: { vata: 1, pitta: 0, kapha: 1 } }
     ]
   },
   {
-    id: 38, section: 'F', question: 'Memory retention',
+    id: 505, section: 'C', question: 'Skin Thickness',
     options: [
-      { text: 'Poor/Variable', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Good/Strong', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 39, section: 'F', question: 'Speaking amount',
-    options: [
-      { text: 'Excessive', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Less', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 40, section: 'F', question: 'Quality of voice',
-    options: [
-      { text: 'Sharp/High', score: { vata: 2, pitta: 1 } },
-      { text: 'Clear/Toned', score: { pitta: 1 } },
-      { text: 'Deep/Soft', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 41, section: 'F', question: 'Speaking style',
-    options: [
-      { text: 'Quick', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 1 } },
-      { text: 'Slow', score: { kapha: 2 } }
+      { text: 'Thin', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Thick', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION G
+  // --- Q6: Hair Features ---
   {
-    id: 42, section: 'G', question: 'Physical activity',
+    id: 601, section: 'D', question: 'Hair Nature',
     options: [
-      { text: 'Hyperactive', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Slow', score: { kapha: 2 } }
+      { text: 'Dry', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Oily', score: { vata: 0, pitta: 1, kapha: 2 } },
+      { text: 'Normal', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Seasonal / Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
     ]
   },
   {
-    id: 43, section: 'G', question: 'Walking pace',
+    id: 602, section: 'D', question: 'Hair Color',
     options: [
-      { text: 'Fast', score: { vata: 2 } },
-      { text: 'Medium', score: { pitta: 1 } },
-      { text: 'Slow', score: { kapha: 2 } }
+      { text: 'Black', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Dark Brown', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Light Brown', score: { vata: 1, pitta: 1, kapha: 0 } },
+      { text: 'Blonde', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Copper', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Dusky', score: { vata: 1, pitta: 0, kapha: 1 } }
     ]
   },
   {
-    id: 44, section: 'G', question: 'Preference for routine',
+    id: 603, section: 'D', question: 'Hair Type (Thickness)',
     options: [
-      { text: 'Variable', score: { vata: 2 } },
-      { text: 'Balanced', score: { pitta: 1 } },
-      { text: 'Routine lover', score: { kapha: 2 } }
+      { text: 'Thick', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Thin', score: { vata: 2, pitta: 0, kapha: 0 } }
     ]
   },
   {
-    id: 45, section: 'G', question: 'Hand movement',
+    id: 604, section: 'D', question: 'Hair Prone To (Select all)',
+    allowMultiple: true,
     options: [
-      { text: 'High/Excessive', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Less', score: { kapha: 2 } }
-    ]
-  },
-  {
-    id: 46, section: 'G', question: 'Shoulder movement',
-    options: [
-      { text: 'High/Excessive', score: { vata: 2 } },
-      { text: 'Moderate', score: { pitta: 1 } },
-      { text: 'Less', score: { kapha: 2 } }
+      { text: 'Graying', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Falling', score: { vata: 1, pitta: 1, kapha: 0 } },
+      { text: 'Breaking / Split Ends', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'None', score: { vata: 0, pitta: 0, kapha: 2 } }
     ]
   },
 
-  // SECTION H
+  // --- Q7: Nail Features ---
   {
-    id: 47, section: 'H', question: 'Body odor',
+    id: 701, section: 'E', question: 'Nail Color',
     options: [
-      { text: 'Strong', score: { pitta: 2, kapha: 1 } },
-      { text: 'Mild', score: {} },
-      { text: 'Very mild', score: { vata: 2 } }
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pink', score: { vata: 0, pitta: 1, kapha: 1 } }
     ]
   },
   {
-    id: 48, section: 'H', question: 'Weather preference',
+    id: 702, section: 'E', question: 'Nail Texture',
     options: [
-      { text: 'Cold', score: { vata: 2 } },
-      { text: 'Warm', score: { pitta: 2 } },
-      { text: 'Both/All', score: {} }
+      { text: 'Rough', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Soft', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Smooth', score: { vata: 0, pitta: 1, kapha: 1 } }
     ]
   },
   {
-    id: 49, section: 'H', question: 'Weather health problems',
+    id: 703, section: 'E', question: 'Nail Nature',
     options: [
-      { text: 'Affects in Cold', score: { vata: 2 } },
-      { text: 'Affects in Warm', score: { pitta: 2 } },
-      { text: 'All/None/Seasonal', score: {} }
+      { text: 'Firm', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Brittle', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q8: Teeth & Palate ---
+  {
+    id: 801, section: 'F', question: 'Teeth Color',
+    options: [
+      { text: 'Dull / Blackish', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Milky White', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Yellowish', score: { vata: 0, pitta: 2, kapha: 0 } }
     ]
   },
   {
-    id: 50, section: 'H', question: 'Weight change pattern',
+    id: 802, section: 'F', question: 'Teeth Shape',
     options: [
-      { text: 'Gain easily', score: { kapha: 2 } },
-      { text: 'Lose easily', score: { vata: 2 } },
-      { text: 'Difficulty in both', score: { pitta: 2 } }
+      { text: 'Even', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Uneven', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 803, section: 'F', question: 'Teeth Size',
+    options: [
+      { text: 'Large', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Small', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 804, section: 'F', question: 'Palate Color',
+    options: [
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pink', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+
+  // --- Q9: Lips Features (Color/Nature) ---
+  {
+    id: 901, section: 'G', question: 'Lips Color',
+    options: [
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pink', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 902, section: 'G', question: 'Lips Nature',
+    options: [
+      { text: 'Firm', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Cracked', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Wrinkled', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q10: Palm Features ---
+  {
+    id: 1001, section: 'G', question: 'Palm Color',
+    options: [
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pink', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1002, section: 'G', question: 'Palm Nature',
+    options: [
+      { text: 'Firm', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Cracked', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Wrinkled', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q11: Sole Features ---
+  {
+    id: 1101, section: 'G', question: 'Sole Color',
+    options: [
+      { text: 'Dark', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Reddish', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pale Yellow', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pink', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1102, section: 'G', question: 'Sole Nature',
+    options: [
+      { text: 'Firm', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Cracked', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Wrinkled', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q12: Food & Digestion ---
+  {
+    id: 1201, section: 'H', question: 'Taste Preference',
+    options: [
+      { text: 'Sweet', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Sour', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Salty', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Bitter', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Pungent', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Astringent', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1202, section: 'H', question: 'Food / Beverage Preference (Temp)',
+    options: [
+      { text: 'Cold', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Warm', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Any', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1203, section: 'H', question: 'Appetite Frequency',
+    options: [
+      { text: 'Regular', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Irregular', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1204, section: 'H', question: 'Appetite Quantity',
+    options: [
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1205, section: 'H', question: 'Digestive Strength',
+    options: [
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
+    ]
+  },
+
+  // --- Q13: Physiological Functions ---
+  {
+    id: 1301, section: 'I', question: 'Body Temperature',
+    options: [
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1302, section: 'I', question: 'Perspiration (Sweating)',
+    options: [
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1303, section: 'I', question: 'Body Odor',
+    options: [
+      { text: 'Very Less', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Mild', score: { vata: 0, pitta: 0, kapha: 0 } }, // Not specified in prompt, assume 0 or 1. User: "Mild -> ??". Table says "Very mild -> V2", "Strong -> P2 K1". I'll default to 0.
+      { text: 'Strong', score: { vata: 0, pitta: 2, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1304, section: 'I', question: 'Sleep Duration',
+    options: [
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Variable', score: { vata: 1, pitta: 1, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1305, section: 'I', question: 'Sleep Quality',
+    options: [
+      { text: 'Deep', score: { vata: 0, pitta: 0, kapha: 2 } }, // Inferred Kapha for Deep
+      { text: 'Sound', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Shallow', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1306, section: 'I', question: 'Body Weight Change',
+    options: [
+      { text: 'Gain & Lose Easily', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Difficulty Gaining', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Gain Easily, Lose with Difficulty', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Stable', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+
+  // --- Q14: Bowel Pattern ---
+  {
+    id: 1401, section: 'I', question: 'Bowel Frequency',
+    options: [
+      { text: 'Regular', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Irregular', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1402, section: 'I', question: 'Bowel Tendency',
+    options: [
+      { text: 'Constipation', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Loose Motion', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Normal', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1403, section: 'I', question: 'Stool Consistency',
+    options: [
+      { text: 'Hard', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Soft / Semi-solid', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Well Formed', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+
+  // --- Q15: Strength Assessment ---
+  {
+    id: 1501, section: 'I', question: 'Physical Strength',
+    options: [
+      { text: 'Grade 1 (Low)', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Grade 2 (Med)', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Grade 3 (High)', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1502, section: 'I', question: 'Mental Strength',
+    options: [
+      { text: 'Grade 1', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Grade 2', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Grade 3', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1503, section: 'I', question: 'Disease Resistance',
+    options: [
+      { text: 'Grade 1', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Grade 2', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Grade 3', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1504, section: 'I', question: 'Healing Capacity',
+    options: [
+      { text: 'Grade 1', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Grade 2', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Grade 3', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+
+  // --- Q16: Environmental Tolerance ---
+  {
+    id: 1601, section: 'J', question: 'Seasonal Health Issues',
+    options: [
+      { text: 'Summer', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Early Winter', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Late Winter', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Rainy', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Autumn', score: { vata: 0, pitta: 1, kapha: 1 } }, // Typical Vata aggravates in Autumn? User manual: "Winter/Rainy -> V2". I'll map as per user block: "Winter/Rainy 2, Summer P2, Spring K2"
+      { text: 'Spring', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Seasonal Transition', score: { vata: 1, pitta: 1, kapha: 1 } },
+      { text: 'None', score: { vata: 0, pitta: 1, kapha: 1 } }
+    ]
+  },
+  {
+    id: 1602, section: 'J', question: 'Weather Sensitivity',
+    options: [
+      { text: 'Cold', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Warm', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Both', score: { vata: 1, pitta: 1, kapha: 0 } },
+      { text: 'None', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+
+  // --- Q17: Speech & Voice ---
+  {
+    id: 1701, section: 'K', question: 'Speaking Speed',
+    options: [
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1702, section: 'K', question: 'Speaking Quantity',
+    options: [
+      { text: 'Excessive', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1703, section: 'K', question: 'Speech Nature (Select applicable)',
+    allowMultiple: true,
+    options: [
+      { text: 'Convincing', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Argumentative', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Sweet & Pleasing', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Avoids Confrontation', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Deviates from Topic', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Irrelevant in Between', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1704, section: 'K', question: 'Voice Clarity',
+    options: [
+      { text: 'Clear', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Unclear', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1705, section: 'K', question: 'Voice Quality',
+    options: [
+      { text: 'Rough', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Deep', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Sharp', score: { vata: 0, pitta: 2, kapha: 0 } }
+    ]
+  },
+
+  // --- Q18: Movements at Rest ---
+  {
+    id: 1801, section: 'K', question: 'Hand Movement',
+    options: [
+      { text: 'High', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1802, section: 'K', question: 'Leg Movement',
+    options: [
+      { text: 'High', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1803, section: 'K', question: 'Eyebrow Movement',
+    options: [
+      { text: 'High', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1804, section: 'K', question: 'Shoulder Movement',
+    options: [
+      { text: 'High', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+
+  // --- Q19: Walking Pattern ---
+  {
+    id: 1901, section: 'K', question: 'Walking Amount',
+    options: [
+      { text: 'Excessive', score: { vata: 2, pitta: 0, kapha: 0 } }, // Inferred
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Less', score: { vata: 0, pitta: 0, kapha: 2 } }
+    ]
+  },
+  {
+    id: 1902, section: 'K', question: 'Walking Speed',
+    options: [
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 1903, section: 'K', question: 'Walking Style',
+    options: [
+      { text: 'Firm / Steady', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Sharp / Accurate', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Wavering / Unsteady', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q20: Memory & Cognition ---
+  {
+    id: 2001, section: 'K', question: 'Memorizing Speed',
+    options: [
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2002, section: 'K', question: 'Forgetfulness',
+    options: [
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2003, section: 'K', question: 'Retention Power',
+    options: [
+      { text: 'Good', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Poor', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2004, section: 'K', question: 'Olfactory Memory (Smell)',
+    options: [
+      { text: 'Good', score: { vata: 0, pitta: 0, kapha: 2 } }, // Usually Kapha
+      { text: 'Poor', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+
+  // --- Q21: Execution of Work ---
+  {
+    id: 2101, section: 'L', question: 'Working Quality',
+    options: [
+      { text: 'Sharp / Spontaneous', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Well Thought Out', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Easily Deviated', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2102, section: 'L', question: 'Working Speed',
+    options: [
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2103, section: 'L', question: 'Working Style',
+    options: [
+      { text: 'Firm / Steady', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Sharp / Accurate', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Unsteady', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2104, section: 'L', question: 'Planning Ability',
+    options: [
+      { text: 'Good', score: { vata: 0, pitta: 2, kapha: 2 } },
+      { text: 'Medium', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Poor', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2105, section: 'L', question: 'Initiation Speed',
+    options: [
+      { text: 'Fast', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderate', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Slow', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variable', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2106, section: 'L', question: 'Execution Quality',
+    options: [
+      { text: 'Good', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Poor', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2107, section: 'L', question: 'Task Completion',
+    options: [
+      { text: 'High', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Medium', score: { vata: 0, pitta: 1, kapha: 1 } },
+      { text: 'Low', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  // Q22: Social - Keeping as Q22
+  {
+    id: 2201, section: 'L', question: 'Making Friends',
+    options: [
+      { text: 'Quickly', score: { vata: 2, pitta: 0, kapha: 0 } },
+      { text: 'Moderately', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Slowly', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variably', score: { vata: 2, pitta: 0, kapha: 0 } }
+    ]
+  },
+  {
+    id: 2202, section: 'L', question: 'Irritation Frequency',
+    options: [
+      { text: 'Quickly', score: { vata: 0, pitta: 2, kapha: 0 } },
+      { text: 'Moderately', score: { vata: 2, pitta: 0, kapha: 0 } }, // Vata is also quick/variable
+      { text: 'Slowly', score: { vata: 0, pitta: 0, kapha: 2 } },
+      { text: 'Variably', score: { vata: 2, pitta: 0, kapha: 0 } }
     ]
   }
 ];

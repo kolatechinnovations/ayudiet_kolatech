@@ -7,16 +7,22 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
   // Initialize answers with mapping if scan data is present
   const [answers, setAnswers] = useState(() => {
     const initial = new Array(questions.length).fill(null);
-    if (!initialScanData || !initialScanData.question_predictions) return initial;
+    if (!initialScanData) return initial;
 
-    const predictions = initialScanData.question_predictions;
+    // Support both flattened and section-based/ID-based structures
+    // The previous app.py returned { question_predictions: ... }
+    // The new merged data from App.jsx is just { "101": {value:"...", confidence:..}, ... }
+    
+    // Check if we need to access 'question_predictions' property or use data directly
+    const predictions = initialScanData.question_predictions || initialScanData;
 
-    // Use a more dynamic approach: iterate through backend predictions
     Object.keys(predictions).forEach(qId => {
       const questionIndex = questions.findIndex(q => q.id === parseInt(qId));
       if (questionIndex !== -1) {
         const question = questions[questionIndex];
-        const predictedValue = predictions[qId];
+        const pred = predictions[qId];
+        // Handle both object {value, confidence} and simple string formats
+        const predictedValue = typeof pred === 'object' && pred.value ? pred.value : pred;
         
         // Find the option that matches the predicted value
         const option = question.options.find(o => o.text === predictedValue);
@@ -32,20 +38,52 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
   const autoFillAll = () => {
     const randomAnswers = questions.map(q => {
       const randomIndex = Math.floor(Math.random() * q.options.length);
-      return q.options[randomIndex];
+      const selected = q.options[randomIndex];
+      return q.allowMultiple ? [selected] : selected;
     });
     setAnswers(randomAnswers);
     setCurrentIndex(questions.length - 1);
   };
 
+  /* Updated to handle both single and multiple selection */
   const currentQuestion = questions[currentIndex];
-  const currentSection = sections.find(s => s.id === currentQuestion.section);
+  // Safe check for section
+  const currentSection = sections.find(s => s.id === currentQuestion.section) || { id: '?', title: 'Unknown' };
   
+  // Get prediction for current question if exists
+  const getPrediction = () => {
+    if (!initialScanData) return null;
+    const predictions = initialScanData.question_predictions || initialScanData;
+    const pred = predictions[currentQuestion.id.toString()];
+    if (!pred) return null;
+    
+    // Return object or normalize string
+    if (typeof pred === 'object' && pred.value) return pred;
+    return { value: pred, confidence: 1.0 }; // Fallback for old style
+  };
+
+  const prediction = getPrediction();
+
   const progress = ((currentIndex + 1) / questions.length) * 100;
 
   const handleOptionSelect = (option) => {
     const newAnswers = [...answers];
-    newAnswers[currentIndex] = option;
+    
+    if (currentQuestion.allowMultiple) {
+      // Initialize if null
+      let currentSelection = Array.isArray(newAnswers[currentIndex]) ? [...newAnswers[currentIndex]] : [];
+      
+      const existsIndex = currentSelection.findIndex(o => o.text === option.text);
+      if (existsIndex > -1) {
+        currentSelection.splice(existsIndex, 1);
+      } else {
+        currentSelection.push(option);
+      }
+      newAnswers[currentIndex] = currentSelection;
+    } else {
+      newAnswers[currentIndex] = option;
+    }
+    
     setAnswers(newAnswers);
   };
 
@@ -63,7 +101,13 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
     }
   };
 
-  const canNext = answers[currentIndex] !== null;
+  const canNext = (() => {
+    const ans = answers[currentIndex];
+    if (currentQuestion.allowMultiple) {
+      return Array.isArray(ans) && ans.length > 0;
+    }
+    return ans !== null;
+  })();
 
   return (
     <div className="card">
@@ -73,20 +117,19 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
 
       <div className="section-badge" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>Section {currentSection.id}: {currentSection.title}</span>
-        <button 
-          onClick={autoFillAll}
-          style={{ 
-            background: 'rgba(255,255,255,0.1)', 
-            border: 'none', 
-            color: 'var(--text-light)', 
-            fontSize: '0.7rem', 
-            cursor: 'pointer',
-            padding: '2px 8px',
-            borderRadius: '4px'
-          }}
-        >
-          DEBUG: Auto-fill All
-        </button>
+        {prediction && (
+           <span style={{ 
+             fontSize: '0.75rem', 
+             padding: '4px 8px', 
+             borderRadius: '12px',
+             backgroundColor: prediction.confidence >= 0.75 ? '#dcfce7' : '#fef9c3',
+             color: prediction.confidence >= 0.75 ? '#166534' : '#854d0e',
+             fontWeight: 600
+           }}>
+             {prediction.confidence >= 0.75 ? '✨ AI Filled' : '⚠️ Review Suggested'} 
+             {prediction.confidence && ` (${Math.round(prediction.confidence * 100)}%)`}
+           </span>
+        )}
       </div>
 
       <div className="question-container">
@@ -98,7 +141,11 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
           {currentQuestion.options.map((option, idx) => (
             <button
               key={idx}
-              className={`option-card ${answers[currentIndex]?.text === option.text ? 'selected' : ''}`}
+              className={`option-card ${
+                Array.isArray(answers[currentIndex]) 
+                  ? answers[currentIndex].some(o => o.text === option.text) ? 'selected' : ''
+                  : answers[currentIndex]?.text === option.text ? 'selected' : ''
+              }`}
               onClick={() => handleOptionSelect(option)}
             >
               {option.text}

@@ -4,10 +4,21 @@ export const calculatePrakriti = (answers) => {
     const scores = { vata: 0, pitta: 0, kapha: 0 };
 
     answers.forEach((answer) => {
-        if (answer && answer.score) {
-            Object.keys(answer.score).forEach((dosha) => {
-                scores[dosha] += answer.score[dosha];
-            });
+        if (!answer) return;
+
+        // Helper to add score
+        const addScore = (opt) => {
+            if (opt && opt.score) {
+                Object.keys(opt.score).forEach((dosha) => {
+                    scores[dosha] += opt.score[dosha];
+                });
+            }
+        };
+
+        if (Array.isArray(answer)) {
+            answer.forEach(subOpt => addScore(subOpt));
+        } else {
+            addScore(answer);
         }
     });
 

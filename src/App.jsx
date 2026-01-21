@@ -2,29 +2,61 @@ import React, { useState } from 'react';
 import AssessmentWizard from './components/AssessmentWizard';
 import ResultsDisplay from './components/ResultsDisplay';
 import FaceScanner from './components/FaceScanner';
+import PalmScanner from './components/PalmScanner';
+import NailScanner from './components/NailScanner';
 import VikritiWizard from './components/VikritiWizard';
 import { calculatePrakriti, calculateVikriti } from './utils/scoringLogic';
 
 function App() {
-  const [stage, setStage] = useState('welcome'); // welcome, scanner, assessment, results, vikriti, final_results
+  // Stages: welcome, scan_face, scan_palm, scan_nails, assessment, results, vikriti, final_results
+  const [stage, setStage] = useState('welcome'); 
   const [prakritiResult, setPrakritiResult] = useState(null);
   const [vikritiResult, setVikritiResult] = useState(null);
-  const [preFilledAnswers, setPreFilledAnswers] = useState(null);
+  
+  // Accumulate scan data
+  const [preFilledAnswers, setPreFilledAnswers] = useState({});
 
   const startAssessment = () => {
-    setStage('scanner');
+    setStage('scan_face');
+    setPreFilledAnswers({});
   };
 
-  const handleScanComplete = (scanData) => {
-    setPreFilledAnswers(scanData);
+  // --- Scan Handlers ---
+  const mergeData = (newData) => {
+    setPreFilledAnswers(prev => ({
+      ...prev,
+      ...newData
+    }));
+  };
+
+  const handleFaceComplete = (scanData) => {
+    mergeData(scanData);
+    setStage('scan_palm');
+  };
+  
+  const handleFaceSkip = () => {
+    setStage('scan_palm');
+  };
+
+  const handlePalmComplete = (scanData) => {
+    mergeData(scanData);
+    setStage('scan_nails');
+  };
+  
+  const handlePalmSkip = () => {
+    setStage('scan_nails');
+  };
+
+  const handleNailComplete = (scanData) => {
+    mergeData(scanData);
+    setStage('assessment');
+  };
+  
+  const handleNailSkip = () => {
     setStage('assessment');
   };
 
-  const skipScan = () => {
-    setPreFilledAnswers(null);
-    setStage('assessment');
-  };
-
+  // --- Assessment Handlers ---
   const handleAssessmentComplete = (answers) => {
     const res = calculatePrakriti(answers);
     setPrakritiResult(res);
@@ -44,6 +76,7 @@ function App() {
   const resetAssessment = () => {
     setPrakritiResult(null);
     setVikritiResult(null);
+    setPreFilledAnswers({});
     setStage('welcome');
   };
 
@@ -59,7 +92,7 @@ function App() {
           <div className="section-badge">Stage 1: Prakriti</div>
           <h2 className="question-text">Prakriti Assessment</h2>
           <p style={{ color: 'var(--text-light)', marginBottom: '2rem' }}>
-            Identify your primal constitution (Vata, Pitta, or Kapha) through our comprehensive 50-step questionnaire based on classical Ayurvedic principles.
+            Identify your primal constitution (Vata, Pitta, or Kapha) through our multi-modal AI assessment (Face, Palm, Nails) followed by a detailed questionnaire.
           </p>
           <button className="btn btn-primary" onClick={startAssessment}>
             Begin Assessment
@@ -67,17 +100,31 @@ function App() {
         </div>
       )}
 
-      {stage === 'scanner' && (
+      {stage === 'scan_face' && (
         <FaceScanner 
-          onScanComplete={handleScanComplete} 
-          onCancel={skipScan} 
+          onScanComplete={handleFaceComplete} 
+          onCancel={handleFaceSkip} 
+        />
+      )}
+      
+      {stage === 'scan_palm' && (
+        <PalmScanner 
+          onScanComplete={handlePalmComplete} 
+          onCancel={handlePalmSkip} 
+        />
+      )}
+      
+      {stage === 'scan_nails' && (
+        <NailScanner 
+          onScanComplete={handleNailComplete} 
+          onCancel={handleNailSkip} 
         />
       )}
 
       {stage === 'assessment' && (
         <AssessmentWizard 
           onComplete={handleAssessmentComplete} 
-          initialScanData={preFilledAnswers}
+          initialScanData={preFilledAnswers} // Pass combined data
         />
       )}
 
