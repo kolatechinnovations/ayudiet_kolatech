@@ -12,12 +12,8 @@ from nail_analysis import analyze_nail_image
 
 app = Flask(__name__)
 
-# ✅ Proper CORS configuration
-CORS(
-    app,
-    resources={r"/*": {"origins": "*"}},
-    supports_credentials=False
-)
+# ✅ Allow all origins & handle preflight correctly
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 def decode_image(base64_string):
     try:
@@ -33,12 +29,12 @@ def decode_image(base64_string):
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok"})
+    return jsonify({"status": "ok"}), 200
 
 @app.route("/scan/face", methods=["POST", "OPTIONS"])
 def scan_face():
     if request.method == "OPTIONS":
-        return jsonify({"ok": True})
+        return jsonify({"ok": True}), 200
     
     data = request.json
     if not data or "image" not in data:
@@ -57,7 +53,7 @@ def scan_face():
 @app.route("/scan/palm", methods=["POST", "OPTIONS"])
 def scan_palm():
     if request.method == "OPTIONS":
-        return jsonify({"ok": True})
+        return jsonify({"ok": True}), 200
         
     data = request.json
     if not data or "image" not in data:
@@ -73,7 +69,7 @@ def scan_palm():
 @app.route("/scan/nails", methods=["POST", "OPTIONS"])
 def scan_nails():
     if request.method == "OPTIONS":
-        return jsonify({"ok": True})
+        return jsonify({"ok": True}), 200
         
     data = request.json
     if not data or "image" not in data:
