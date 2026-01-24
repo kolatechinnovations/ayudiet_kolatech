@@ -40,8 +40,8 @@ def analyze_nail_image(img):
     
     # High variance might mean roughness or just detail
     # Very heuristic, keep confidence LOW
-    if laplacian_var > 500:
-        t_val, t_conf = "Rough", 0.50
+    if laplacian_var > 600:
+        t_val, t_conf = "Rough", 0.60
     else:
         t_val, t_conf = "Smooth", 0.60
         

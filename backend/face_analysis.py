@@ -5,16 +5,32 @@ from mediapipe.tasks import python as mp_python
 from mediapipe.tasks.python import vision
 import os
 
-# Initialize MediaPipe Face Landmarker
-model_path = os.path.join(os.path.dirname(__file__), 'face_landmarker.task')
-base_options = mp_python.BaseOptions(model_asset_path=model_path)
-options = vision.FaceLandmarkerOptions(
-    base_options=base_options,
-    output_face_blendshapes=False,
-    output_facial_transformation_matrixes=False,
-    num_faces=1
-)
-face_landmarker = vision.FaceLandmarker.create_from_options(options)
+# Initialize MediaPipe Face Landmarker safely
+face_landmarker = None
+
+def get_face_landmarker():
+    global face_landmarker
+    if face_landmarker is not None:
+        return face_landmarker
+        
+    try:
+        model_path = os.path.join(os.path.dirname(__file__), 'face_landmarker.task')
+        if not os.path.exists(model_path):
+            print(f"Error: Model file not found at {model_path}")
+            return None
+            
+        base_options = mp_python.BaseOptions(model_asset_path=model_path)
+        options = vision.FaceLandmarkerOptions(
+            base_options=base_options,
+            output_face_blendshapes=False,
+            output_facial_transformation_matrixes=False,
+            num_faces=1
+        )
+        face_landmarker = vision.FaceLandmarker.create_from_options(options)
+        return face_landmarker
+    except Exception as e:
+        print(f"Failed to initialize Face Landmarker: {e}")
+        return None
 
 def analyze_face_image(img):
     """
@@ -23,8 +39,13 @@ def analyze_face_image(img):
     rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
     
+    landmarker = get_face_landmarker()
+    if landmarker is None:
+        print("Face Landmarker not initialized.")
+        return None
+
     try:
-        result = face_landmarker.detect(mp_img)
+        result = landmarker.detect(mp_img)
     except Exception as e:
         print(f"MediaPipe detection error: {e}")
         return None
@@ -134,13 +155,13 @@ def analyze_face_image(img):
         if val < 80:
             p_val, p_conf = "Dark", 0.85
         elif sat < 40:
-            p_val, p_conf = "Pale Yellow", 0.80 # Or Wheatish
+            p_val, p_conf = "Pale Yellow", 0.80
         elif 5 < hue < 20: 
             p_val, p_conf = "Fair Reddish", 0.85
         elif 20 <= hue < 35:
             p_val, p_conf = "Fair Pink", 0.80
         else:
-            p_val, p_conf = "Dusky", 0.75 # Default fallback
+            p_val, p_conf = "Wheatish", 0.75 # Default fallback
             
         predictions["504"] = {"value": p_val, "confidence": p_conf}
     

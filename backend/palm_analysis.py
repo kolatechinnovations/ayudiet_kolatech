@@ -25,11 +25,14 @@ def analyze_palm_image(img):
     avg_sat = np.mean(hsv[:,:,1])
     avg_val = np.mean(hsv[:,:,2])
     
-    # Rules similar to skin but adapted for palm
-    # Palms are usually lighter/redder
+    # Rules for Q1001 (Palm Color)
+    # 0. Dark
+    # 1. Reddish
+    # 2. Pale Yellow
+    # 3. Pink
     if avg_val < 90:
         col_val, col_conf = "Dark", 0.85
-    elif avg_sat > 100 or (0 <= avg_hue <= 20) or (160 <= avg_hue <= 180):
+    elif avg_sat > 100 or (0 <= avg_hue <= 15) or (165 <= avg_hue <= 180):
         col_val, col_conf = "Reddish", 0.90
     elif avg_sat < 50:
         col_val, col_conf = "Pale Yellow", 0.80

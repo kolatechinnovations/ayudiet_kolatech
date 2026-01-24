@@ -2,13 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import base64
 import numpy as np
-import cv2
 import os
-
-# Import analysis functions
-from face_analysis import analyze_face_image
-from palm_analysis import analyze_palm_image
-from nail_analysis import analyze_nail_image
 
 app = Flask(__name__)
 
@@ -16,6 +10,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 def decode_image(base64_string):
+    import cv2  # Lazy import to prevent startup crash
     try:
         if "," in base64_string:
             base64_string = base64_string.split(",")[1]
@@ -36,6 +31,9 @@ def scan_face():
     if request.method == "OPTIONS":
         return jsonify({"ok": True}), 200
     
+    # Lazy import analysis module
+    from face_analysis import analyze_face_image
+    
     data = request.json
     if not data or "image" not in data:
         return jsonify({"error": "No image provided"}), 400
@@ -54,6 +52,9 @@ def scan_face():
 def scan_palm():
     if request.method == "OPTIONS":
         return jsonify({"ok": True}), 200
+    
+    # Lazy import analysis module
+    from palm_analysis import analyze_palm_image
         
     data = request.json
     if not data or "image" not in data:
@@ -71,6 +72,9 @@ def scan_nails():
     if request.method == "OPTIONS":
         return jsonify({"ok": True}), 200
         
+    # Lazy import analysis module
+    from nail_analysis import analyze_nail_image
+
     data = request.json
     if not data or "image" not in data:
         return jsonify({"error": "No image provided"}), 400
