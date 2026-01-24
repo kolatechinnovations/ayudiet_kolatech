@@ -1,1 +1,1 @@
-web: cd backend && gunicorn app:app
+web: cd backend && gunicorn --bind 0.0.0.0:8080 app:app
