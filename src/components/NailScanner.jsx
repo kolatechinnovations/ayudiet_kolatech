@@ -25,7 +25,7 @@ const NailScanner = ({ onScanComplete, onCancel }) => {
     setError(null);
     
     try {
-      const response = await axios.post('http://localhost:5000/scan/nails', {
+      const response = await axios.post('https://ayurvedadietgenrator-production.up.railway.app/scan/nails', {
         image: imgSrc
       });
       
