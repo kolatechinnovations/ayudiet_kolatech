@@ -1,4 +1,3 @@
-import cv2
 import numpy as np
 
 def analyze_palm_image(img):
@@ -6,6 +5,8 @@ def analyze_palm_image(img):
     Analyze palm image for color and texture.
     Returns predictions for Q1001 (Color) and Q1002 (Nature).
     """
+    import cv2 # Lazy Load
+    
     h, w, _ = img.shape
     
     # Focus on center of palm (approximate ROI)

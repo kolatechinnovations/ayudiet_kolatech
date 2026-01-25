@@ -1,4 +1,3 @@
-import cv2
 import numpy as np
 
 def analyze_nail_image(img):
@@ -7,6 +6,8 @@ def analyze_nail_image(img):
     Strict rule: Low confidence (< 0.75) for traits to ensure review.
     Maps to Q701 (Color), Q702 (Texture), Q307 (Size - optional).
     """
+    import cv2 # Lazy Load
+
     # Assuming the user takes a close-up of fingers.
     # We will look at central region for color.
     h, w, _ = img.shape

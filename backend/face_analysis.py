@@ -1,11 +1,7 @@
-import cv2
 import numpy as np
-import mediapipe as mp
-from mediapipe.tasks import python as mp_python
-from mediapipe.tasks.python import vision
 import os
 
-# Initialize MediaPipe Face Landmarker safely
+# Initialize MediaPipe Face Landmarker safely (Global Variable)
 face_landmarker = None
 
 def get_face_landmarker():
@@ -14,6 +10,11 @@ def get_face_landmarker():
         return face_landmarker
         
     try:
+        # Lazy Import MediaPipe ONLY when needed
+        import mediapipe as mp
+        from mediapipe.tasks import python as mp_python
+        from mediapipe.tasks.python import vision
+        
         model_path = os.path.join(os.path.dirname(__file__), 'face_landmarker.task')
         if not os.path.exists(model_path):
             print(f"Error: Model file not found at {model_path}")
@@ -36,6 +37,10 @@ def analyze_face_image(img):
     """
     Analyze face image and return predictions with confidence.
     """
+    # Lazy Import OpenCV and MediaPipe
+    import cv2
+    import mediapipe as mp
+    
     rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
     
