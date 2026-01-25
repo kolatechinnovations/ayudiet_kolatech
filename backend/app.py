@@ -12,14 +12,18 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 def decode_image(base64_string):
-    import cv2  # Lazy import to prevent startup crash
     try:
+        # Lazy import cv2 inside try to catch missing library
+        import cv2
         if "," in base64_string:
             base64_string = base64_string.split(",")[1]
         img_data = base64.b64decode(base64_string)
         nparr = np.frombuffer(img_data, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         return img
+    except ImportError as e:
+        print(f"cv2 import error: {e}")
+        return None
     except Exception as e:
         print(f"Image decode error: {e}")
         return None
