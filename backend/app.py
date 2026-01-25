@@ -37,35 +37,33 @@ def scan_face():
     if request.method == "OPTIONS":
         return jsonify({"ok": True}), 200
     
+    # Wrap EVERYTHING in a big try-except to catch crashes in decode_image (which imports cv2)
     try:
-        # Lazy import analysis module
-        from face_analysis import analyze_face_image
-    except ImportError as e:
-        print(f"Import Error in scan_face: {e}")
-        traceback.print_exc()
-        return jsonify({"error": "Server Configuration Error", "details": str(e), "trace": traceback.format_exc()}), 500
-    except Exception as e:
-         print(f"Unexpected Error in scan_face import: {e}")
-         traceback.print_exc()
-         return jsonify({"error": "Server Error", "details": str(e), "trace": traceback.format_exc()}), 500
-    
-    data = request.json
-    if not data or "image" not in data:
-        return jsonify({"error": "No image provided"}), 400
-    
-    img = decode_image(data["image"])
-    if img is None:
-        return jsonify({"error": "Invalid image"}), 400
+        try:
+            # Lazy import analysis module
+            from face_analysis import analyze_face_image
+        except ImportError as e:
+            print(f"Import Error in scan_face: {e}")
+            traceback.print_exc()
+            return jsonify({"error": "Server Configuration Error", "details": str(e), "trace": traceback.format_exc()}), 500
+        
+        data = request.json
+        if not data or "image" not in data:
+            return jsonify({"error": "No image provided"}), 400
+        
+        # This calls cv2.imdecode inside
+        img = decode_image(data["image"])
+        if img is None:
+            return jsonify({"error": "Invalid image"}), 400
 
-    try:
         results = analyze_face_image(img)
         if not results:
             return jsonify({"error": "Face analysis failed or no face detected"}), 400
         return jsonify(results)
     except Exception as e:
-        print(f"Analysis Error: {e}")
+        print(f"Global Error in scan_face: {e}")
         traceback.print_exc()
-        return jsonify({"error": "Analysis Failed", "details": str(e)}), 500
+        return jsonify({"error": "Server Crash", "details": str(e), "trace": traceback.format_exc()}), 500
 
 @app.route("/scan/palm", methods=["POST", "OPTIONS"])
 def scan_palm():
@@ -73,21 +71,25 @@ def scan_palm():
         return jsonify({"ok": True}), 200
     
     try:
-        # Lazy import analysis module
-        from palm_analysis import analyze_palm_image
-    except ImportError as e:
-        return jsonify({"error": "Server Configuration Error", "details": str(e)}), 500
+        try:
+            # Lazy import analysis module
+            from palm_analysis import analyze_palm_image
+        except ImportError as e:
+            return jsonify({"error": "Server Configuration Error", "details": str(e)}), 500
+            
+        data = request.json
+        if not data or "image" not in data:
+            return jsonify({"error": "No image provided"}), 400
         
-    data = request.json
-    if not data or "image" not in data:
-        return jsonify({"error": "No image provided"}), 400
-    
-    img = decode_image(data["image"])
-    if img is None:
-        return jsonify({"error": "Invalid image"}), 400
+        img = decode_image(data["image"])
+        if img is None:
+            return jsonify({"error": "Invalid image"}), 400
 
-    results = analyze_palm_image(img)
-    return jsonify(results)
+        results = analyze_palm_image(img)
+        return jsonify(results)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": "Server Crash", "details": str(e)}), 500
 
 @app.route("/scan/nails", methods=["POST", "OPTIONS"])
 def scan_nails():
@@ -95,21 +97,25 @@ def scan_nails():
         return jsonify({"ok": True}), 200
         
     try:
-        # Lazy import analysis module
-        from nail_analysis import analyze_nail_image
-    except ImportError as e:
-        return jsonify({"error": "Server Configuration Error", "details": str(e)}), 500
+        try:
+            # Lazy import analysis module
+            from nail_analysis import analyze_nail_image
+        except ImportError as e:
+            return jsonify({"error": "Server Configuration Error", "details": str(e)}), 500
 
-    data = request.json
-    if not data or "image" not in data:
-        return jsonify({"error": "No image provided"}), 400
-    
-    img = decode_image(data["image"])
-    if img is None:
-        return jsonify({"error": "Invalid image"}), 400
+        data = request.json
+        if not data or "image" not in data:
+            return jsonify({"error": "No image provided"}), 400
+        
+        img = decode_image(data["image"])
+        if img is None:
+            return jsonify({"error": "Invalid image"}), 400
 
-    results = analyze_nail_image(img)
-    return jsonify(results)
+        results = analyze_nail_image(img)
+        return jsonify(results)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": "Server Crash", "details": str(e)}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
