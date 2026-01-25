@@ -109,11 +109,48 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
     return ans !== null;
   })();
 
+  // Calculate which questions were AI-filled for the feedback text
+  const aiFilledIndices = React.useMemo(() => {
+    if (!initialScanData) return [];
+    const predictions = initialScanData.question_predictions || initialScanData;
+    const indices = [];
+    Object.keys(predictions).forEach(qId => {
+      const idx = questions.findIndex(q => q.id === parseInt(qId));
+      if (idx !== -1) indices.push(idx + 1); // Store 1-based question numbers
+    });
+    return indices.sort((a, b) => a - b);
+  }, [initialScanData]);
+
   return (
     <div className="card">
       <div className="progress-container">
         <div className="progress-bar" style={{ width: `${progress}%` }}></div>
       </div>
+
+      {/* AI Auto-fill Feedback Message */}
+      {aiFilledIndices.length > 0 && (
+        <div style={{ 
+          marginBottom: '1.5rem', 
+          padding: '12px', 
+          backgroundColor: '#f0fdf4', 
+          border: '1px solid #86efac', 
+          borderRadius: '8px', 
+          fontSize: '0.9rem', 
+          color: '#166534' 
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+            <span style={{ fontSize: '1.2rem' }}>✨</span>
+            <strong>AI Analysis Applied</strong>
+          </div>
+          <p style={{ margin: 0, lineHeight: '1.4' }}>
+            Questions <strong>{aiFilledIndices.join(', ')}</strong> have been auto-filled based on your scan results.
+            <br />
+            <span style={{ fontSize: '0.85rem', opacity: 0.9 }}>
+              You can review and manually change any answer if needed.
+            </span>
+          </p>
+        </div>
+      )}
 
       <div className="section-badge" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>Section {currentSection.id}: {currentSection.title}</span>
@@ -173,6 +210,27 @@ const AssessmentWizard = ({ onComplete, initialScanData }) => {
           disabled={!canNext}
         >
           {currentIndex === questions.length - 1 ? 'See Results' : 'Next Question'}
+        </button>
+      </div>
+
+      {/* Fast Fill Debug Button */}
+      <div style={{ marginTop: '2rem', textAlign: 'center', borderTop: '1px dashed #e2e8f0', paddingTop: '1rem' }}>
+        <button 
+          onClick={autoFillAll}
+          style={{ 
+            background: 'transparent', 
+            border: '1px solid #cbd5e1', 
+            padding: '8px 16px', 
+            borderRadius: '6px', 
+            fontSize: '0.8rem', 
+            color: '#64748b', 
+            cursor: 'pointer',
+            transition: 'all 0.2s'
+          }}
+          onMouseOver={(e) => { e.target.style.borderColor = '#94a3b8'; e.target.style.color = '#475569'; }}
+          onMouseOut={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.color = '#64748b'; }}
+        >
+          ⚡ Fill all answers for fast testing
         </button>
       </div>
     </div>
