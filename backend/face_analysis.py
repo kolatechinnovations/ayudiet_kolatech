@@ -10,7 +10,18 @@ def get_face_landmarker():
         return face_landmarker
         
     try:
-        # Lazy Import MediaPipe ONLY when needed
+        # -------------------------------------------------------------------------
+        # CRITICAL FIX: MediaPipe hard-imports 'cv2' for drawing utils.
+        # We don't use drawing utils. 'cv2' in production (headless) crashes 
+        # because of missing system libs (libxcb).
+        # We MOCK 'cv2' so MediaPipe thinks it's there, bypassing the crash.
+        # -------------------------------------------------------------------------
+        import sys
+        from unittest.mock import MagicMock
+        if "cv2" not in sys.modules:
+            sys.modules["cv2"] = MagicMock()
+        
+        # Now import MediaPipe
         import mediapipe as mp
         from mediapipe.tasks import python as mp_python
         from mediapipe.tasks.python import vision
@@ -88,6 +99,12 @@ def analyze_face_image(img):
     Input 'img' is expected to be RGB numpy array (from PIL).
     """
     # Lazy Import MediaPipe
+    # MOCK CV2 AGAIN JUST IN CASE
+    import sys
+    from unittest.mock import MagicMock
+    if "cv2" not in sys.modules:
+        sys.modules["cv2"] = MagicMock()
+
     import mediapipe as mp
     
     # Input is already RGB
