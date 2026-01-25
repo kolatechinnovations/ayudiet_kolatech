@@ -25,7 +25,8 @@ const PalmScanner = ({ onScanComplete, onCancel }) => {
     setError(null);
     
     try {
-      const response = await axios.post('https://ayurvedadietgenrator-production.up.railway.app/scan/palm', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+      const response = await axios.post(`${apiUrl}/scan/palm`, {
         image: imgSrc
       });
       

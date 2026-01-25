@@ -25,7 +25,8 @@ const FaceScanner = ({ onScanComplete, onCancel }) => {
     setError(null);
     
     try {
-      const response = await axios.post('https://ayurvedadietgenrator-production.up.railway.app/scan/face', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+      const response = await axios.post(`${apiUrl}/scan/face`, {
         image: imgSrc
       });
       

@@ -14,19 +14,26 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def decode_image(base64_string):
     try:
         # Lazy import cv2 inside try to catch missing library
-        import cv2
+        try:
+            import cv2
+        except ImportError as e:
+            return None, f"cv2 import error: {e}"
+
         if "," in base64_string:
             base64_string = base64_string.split(",")[1]
-        img_data = base64.b64decode(base64_string)
-        nparr = np.frombuffer(img_data, np.uint8)
-        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        return img
-    except ImportError as e:
-        print(f"cv2 import error: {e}")
-        return None
+        
+        try:
+            img_data = base64.b64decode(base64_string)
+            nparr = np.frombuffer(img_data, np.uint8)
+            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+            if img is None:
+                return None, "cv2.imdecode returned None (corrupt data?)"
+            return img, None
+        except Exception as e:
+            return None, f"Decoding error: {e}"
+
     except Exception as e:
-        print(f"Image decode error: {e}")
-        return None
+        return None, f"Unexpected error in decode_image: {e}"
 
 @app.route("/", methods=["GET"])
 def index():
@@ -56,9 +63,9 @@ def scan_face():
             return jsonify({"error": "No image provided"}), 400
         
         # This calls cv2.imdecode inside
-        img = decode_image(data["image"])
+        img, error = decode_image(data["image"])
         if img is None:
-            return jsonify({"error": "Invalid image"}), 400
+            return jsonify({"error": f"Invalid image: {error}"}), 400
 
         results = analyze_face_image(img)
         if not results:
@@ -85,9 +92,9 @@ def scan_palm():
         if not data or "image" not in data:
             return jsonify({"error": "No image provided"}), 400
         
-        img = decode_image(data["image"])
+        img, error = decode_image(data["image"])
         if img is None:
-            return jsonify({"error": "Invalid image"}), 400
+            return jsonify({"error": f"Invalid image: {error}"}), 400
 
         results = analyze_palm_image(img)
         return jsonify(results)
@@ -111,9 +118,9 @@ def scan_nails():
         if not data or "image" not in data:
             return jsonify({"error": "No image provided"}), 400
         
-        img = decode_image(data["image"])
+        img, error = decode_image(data["image"])
         if img is None:
-            return jsonify({"error": "Invalid image"}), 400
+            return jsonify({"error": f"Invalid image: {error}"}), 400
 
         results = analyze_nail_image(img)
         return jsonify(results)

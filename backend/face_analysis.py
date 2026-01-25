@@ -25,7 +25,8 @@ def get_face_landmarker():
             base_options=base_options,
             output_face_blendshapes=False,
             output_facial_transformation_matrixes=False,
-            num_faces=1
+            num_faces=1,
+            min_face_detection_confidence=0.3
         )
         face_landmarker = vision.FaceLandmarker.create_from_options(options)
         return face_landmarker
