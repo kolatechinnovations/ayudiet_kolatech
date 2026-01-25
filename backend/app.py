@@ -5,6 +5,8 @@ import numpy as np
 import os
 import sys
 import traceback
+import io
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -13,22 +15,13 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 def decode_image(base64_string):
     try:
-        # Lazy import cv2 inside try to catch missing library
-        try:
-            import cv2
-        except ImportError as e:
-            return None, f"cv2 import error: {e}"
-
         if "," in base64_string:
             base64_string = base64_string.split(",")[1]
         
         try:
             img_data = base64.b64decode(base64_string)
-            nparr = np.frombuffer(img_data, np.uint8)
-            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-            if img is None:
-                return None, "cv2.imdecode returned None (corrupt data?)"
-            return img, None
+            image = Image.open(io.BytesIO(img_data)).convert("RGB")
+            return np.array(image), None
         except Exception as e:
             return None, f"Decoding error: {e}"
 
@@ -37,7 +30,7 @@ def decode_image(base64_string):
 
 @app.route("/", methods=["GET"])
 def index():
-    return jsonify({"status": "Backend is running", "modules": {"cv2": "opencv-python-headless" in os.popen('pip list').read() if os.name != 'nt' else "unknown"}}), 200
+    return jsonify({"status": "Backend is running", "modules": {"PIL": "Pillow" in os.popen('pip list').read() if os.name != 'nt' else "unknown"}}), 200
 
 @app.route("/health", methods=["GET"])
 def health():

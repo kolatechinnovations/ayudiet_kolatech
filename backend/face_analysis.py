@@ -34,16 +34,64 @@ def get_face_landmarker():
         print(f"Failed to initialize Face Landmarker: {e}")
         return None
 
+def rgb_to_hsv_opencv_scale(rgb_array):
+    """
+    Convert RGB (0-255) numpy array to HSV (H:0-179, S:0-255, V:0-255)
+    to match existing logic.
+    """
+    rgb = rgb_array.astype('float32') / 255.0
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    
+    max_c = np.max(rgb, axis=-1)
+    min_c = np.min(rgb, axis=-1)
+    delta = max_c - min_c
+    
+    # Value
+    v = max_c
+    
+    # Saturation
+    s = np.zeros_like(v)
+    mask = max_c != 0
+    s[mask] = delta[mask] / max_c[mask]
+    
+    # Hue
+    h = np.zeros_like(v)
+    mask = delta != 0
+    
+    # Red is max
+    idx = (r == max_c) & mask
+    h[idx] = (g[idx] - b[idx]) / delta[idx]
+    
+    # Green is max
+    idx = (g == max_c) & mask
+    h[idx] = 2.0 + (b[idx] - r[idx]) / delta[idx]
+    
+    # Blue is max
+    idx = (b == max_c) & mask
+    h[idx] = 4.0 + (r[idx] - g[idx]) / delta[idx]
+    
+    h = (h / 6.0) % 1.0
+    
+    # Convert to OpenCV scale
+    # H: 0-1 -> 0-179 (degrees/2)
+    # S: 0-1 -> 0-255
+    # V: 0-1 -> 0-255
+    out_h = (h * 179).astype('uint8')
+    out_s = (s * 255).astype('uint8')
+    out_v = (v * 255).astype('uint8')
+    
+    return np.stack([out_h, out_s, out_v], axis=-1)
+
 def analyze_face_image(img):
     """
     Analyze face image and return predictions with confidence.
+    Input 'img' is expected to be RGB numpy array (from PIL).
     """
-    # Lazy Import OpenCV and MediaPipe
-    import cv2
+    # Lazy Import MediaPipe
     import mediapipe as mp
     
-    rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+    # Input is already RGB
+    mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=img)
     
     landmarker = get_face_landmarker()
     if landmarker is None:
@@ -57,6 +105,8 @@ def analyze_face_image(img):
         return None
 
     if not result.face_landmarks:
+        # Try finding face with simpler logic if mediapipe fails? No, just fail.
+        # Ensure input was good.
         return None
 
     lm = result.face_landmarks[0]
@@ -147,7 +197,8 @@ def analyze_face_image(img):
                     max(0, cheek_x-roi_size):min(w, cheek_x+roi_size)]
     
     if cheek_roi.size > 0:
-        hsv_roi = cv2.cvtColor(cheek_roi, cv2.COLOR_BGR2HSV)
+        # Use our custom HSV function
+        hsv_roi = rgb_to_hsv_opencv_scale(cheek_roi)
         hue = np.mean(hsv_roi[:,:,0])
         sat = np.mean(hsv_roi[:,:,1])
         val = np.mean(hsv_roi[:,:,2])
@@ -175,7 +226,7 @@ def analyze_face_image(img):
     lip_roi = img[max(0, lip_center_y-5):min(h, lip_center_y+5), 
                   max(0, lip_center_x-5):min(w, lip_center_x+5)]
     if lip_roi.size > 0:
-        hsv_lip = cv2.cvtColor(lip_roi, cv2.COLOR_BGR2HSV)
+        hsv_lip = rgb_to_hsv_opencv_scale(lip_roi)
         l_hue = np.mean(hsv_lip[:,:,0])
         l_val = np.mean(hsv_lip[:,:,2])
         

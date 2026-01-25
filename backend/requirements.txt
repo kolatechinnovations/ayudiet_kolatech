@@ -3,5 +3,5 @@ flask-cors
 numpy
 requests
 gunicorn
-opencv-python-headless==4.9.0.80
+Pillow
 mediapipe==0.10.14
