@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
   const { prakriti_scores, prakriti_percentage, prakriti_type } = result;
+  const [showJson, setShowJson] = useState(false);
+
+  // Prepare structured objects for display
+  const prakritiObject = {
+    prakriti: result.prakriti,
+    baseline_agni: result.baseline_agni,
+    bala: result.bala,
+    tolerance: result.tolerance
+  };
+
+  const vikritiObject = vikriti ? {
+    vikriti: vikriti.vikriti,
+    agni: vikriti.agni,
+    symptoms: vikriti.symptoms,
+    hetu: vikriti.hetu,
+    season: vikriti.season,
+    lifestyle_flags: vikriti.lifestyle_flags
+  } : null;
+
+  const copyToClipboard = (obj) => {
+    navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
+    alert('Copied to clipboard!');
+  };
 
   return (
     <div className="card">
@@ -89,14 +112,113 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
         <button className="btn btn-outline" onClick={onReset}>
           Reset All
         </button>
+        
+        <button 
+          className="btn btn-outline" 
+          onClick={() => setShowJson(!showJson)}
+          style={{ background: 'var(--accent)', borderColor: 'var(--accent)', color: 'white' }}
+        >
+          📋 {showJson ? 'Hide' : 'View'} Result Objects
+        </button>
+        
         {!vikriti && (
             <button className="btn btn-primary" onClick={onNext}>
                 Assess Vikriti (Imbalance)
             </button>
         )}
       </div>
+
+      {/* JSON Display Modal/Section */}
+      {showJson && (
+        <div style={{ 
+          marginTop: '2rem', 
+          padding: '1.5rem', 
+          background: 'rgba(0,0,0,0.3)', 
+          borderRadius: '12px',
+          border: '1px solid rgba(255,255,255,0.1)'
+        }}>
+          <h3 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.2rem' }}>📋 Structured Result Objects</h3>
+          
+          {/* Prakriti Object */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--accent)' }}>Prakriti Assessment Result</h4>
+              <button 
+                onClick={() => copyToClipboard(prakritiObject)}
+                style={{ 
+                  padding: '4px 12px', 
+                  fontSize: '0.8rem', 
+                  background: 'rgba(255,255,255,0.1)',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  borderRadius: '6px',
+                  color: 'white',
+                  cursor: 'pointer'
+                }}
+              >
+                📄 Copy
+              </button>
+            </div>
+            <pre style={{ 
+              background: 'rgba(0,0,0,0.5)', 
+              padding: '1rem', 
+              borderRadius: '8px', 
+              overflow: 'auto',
+              fontSize: '0.85rem',
+              lineHeight: '1.5',
+              margin: 0
+            }}>
+              {JSON.stringify(prakritiObject, null, 2)}
+            </pre>
+          </div>
+
+          {/* Vikriti Object */}
+          {vikritiObject && (
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: '#ff6b6b' }}>Vikriti Assessment Result</h4>
+                <button 
+                  onClick={() => copyToClipboard(vikritiObject)}
+                  style={{ 
+                    padding: '4px 12px', 
+                    fontSize: '0.8rem', 
+                    background: 'rgba(255,255,255,0.1)',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: '6px',
+                    color: 'white',
+                    cursor: 'pointer'
+                  }}
+                >
+                  📄 Copy
+                </button>
+              </div>
+              <pre style={{ 
+                background: 'rgba(0,0,0,0.5)', 
+                padding: '1rem', 
+                borderRadius: '8px', 
+                overflow: 'auto',
+                fontSize: '0.85rem',
+                lineHeight: '1.5',
+                margin: 0
+              }}>
+                {JSON.stringify(vikritiObject, null, 2)}
+              </pre>
+            </div>
+          )}
+
+          <p style={{ 
+            marginTop: '1rem', 
+            marginBottom: 0, 
+            fontSize: '0.8rem', 
+            color: 'var(--text-light)',
+            fontStyle: 'italic'
+          }}>
+            💡 These objects are ready for the Rule Extraction Engine
+          </p>
+        </div>
+      )}
     </div>
   );
 };
 
 export default ResultsDisplay;
+
