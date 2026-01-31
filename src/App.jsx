@@ -59,6 +59,17 @@ function App() {
   // --- Assessment Handlers ---
   const handleAssessmentComplete = (answers) => {
     const res = calculatePrakriti(answers);
+    
+    // Log structured Prakriti result for rule extraction
+    console.log('\n=== PRAKRITI RESULT OBJECT ===');
+    console.log(JSON.stringify({
+      prakriti: res.prakriti,
+      baseline_agni: res.baseline_agni,
+      bala: res.bala,
+      tolerance: res.tolerance
+    }, null, 2));
+    console.log('==============================\n');
+    
     setPrakritiResult(res);
     setStage('results');
   };
@@ -69,6 +80,19 @@ function App() {
 
   const handleVikritiComplete = (answers) => {
     const res = calculateVikriti(answers);
+    
+    // Log structured Vikriti result for rule extraction
+    console.log('\n=== VIKRITI RESULT OBJECT ===');
+    console.log(JSON.stringify({
+      vikriti: res.vikriti,
+      agni: res.agni,
+      symptoms: res.symptoms,
+      hetu: res.hetu,
+      season: res.season,
+      lifestyle_flags: res.lifestyle_flags
+    }, null, 2));
+    console.log('=============================\n');
+    
     setVikritiResult(res);
     setStage('final_results');
   };

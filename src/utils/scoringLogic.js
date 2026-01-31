@@ -1,4 +1,14 @@
 import { vikritiQuestions } from '../data/vikritiData';
+import {
+    extractAgniFromAnswers,
+    extractBalaFromAnswers,
+    extractToleranceFromAnswers,
+    extractAgniFromVikriti,
+    extractSymptomsFromVikriti,
+    extractHetuFromVikriti,
+    extractSeasonFromVikriti,
+    extractLifestyleFlagsFromVikriti
+} from './resultFormatter';
 
 export const calculatePrakriti = (answers) => {
     const scores = { vata: 0, pitta: 0, kapha: 0 };
@@ -36,10 +46,37 @@ export const calculatePrakriti = (answers) => {
 
     const prakritiType = classifyPrakriti(percentages);
 
+    // Extract clinical data
+    const baseline_agni = extractAgniFromAnswers(answers);
+    const bala = extractBalaFromAnswers(answers);
+    const tolerance = extractToleranceFromAnswers(answers);
+
+    // Determine primary and secondary dosha
+    const sorted = Object.entries(percentages)
+        .sort(([, a], [, b]) => b - a);
+
+    const primary = sorted[0][0].charAt(0).toUpperCase() + sorted[0][0].slice(1);
+    const secondary = sorted[0][1] - sorted[1][1] < 10
+        ? sorted[1][0].charAt(0).toUpperCase() + sorted[1][0].slice(1)
+        : null;
+
     return {
         prakriti_scores: scores,
         prakriti_percentage: percentages,
-        prakriti_type: prakritiType
+        prakriti_type: prakritiType,
+        // NEW: Structured result for rule extraction
+        prakriti: {
+            primary,
+            secondary,
+            distribution: {
+                vata_percentage: percentages.vata,
+                pitta_percentage: percentages.pitta,
+                kapha_percentage: percentages.kapha
+            }
+        },
+        baseline_agni,
+        bala,
+        tolerance
     };
 };
 
@@ -106,10 +143,28 @@ export const calculateVikriti = (answers) => {
 
     const interpretation = interpretVikriti(percentages);
 
+    // Extract clinical data using helper functions
+    const agni = extractAgniFromVikriti(answers);
+    const symptoms = extractSymptomsFromVikriti(answers);
+    const hetu = extractHetuFromVikriti(answers);
+    const season = extractSeasonFromVikriti(answers);
+    const lifestyle_flags = extractLifestyleFlagsFromVikriti(answers);
+
     return {
         vikriti_scores: scores,
         vikriti_percentage: percentages,
-        vikriti_interpretation: interpretation
+        vikriti_interpretation: interpretation,
+        // NEW: Structured result for rule extraction
+        vikriti: {
+            vata_percentage: percentages.vata,
+            pitta_percentage: percentages.pitta,
+            kapha_percentage: percentages.kapha
+        },
+        agni,
+        symptoms,
+        hetu,
+        season,
+        lifestyle_flags
     };
 };
 
