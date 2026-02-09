@@ -32,11 +32,22 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(vikritiObject)
         });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.details || errorData.error || 'Server error');
+        }
+
         const data = await response.json();
-        setRecommendations(data);
+        if (Array.isArray(data)) {
+            setRecommendations(data);
+        } else {
+            console.error("Expected array of rules, got:", data);
+            alert("Received invalid data from server.");
+        }
     } catch (error) {
         console.error("Error fetching rules:", error);
-        alert("Failed to fetch dietary rules. Is the backend running?");
+        alert(`Failed to fetch dietary rules: ${error.message}`);
     } finally {
         setLoadingRules(false);
     }

@@ -2,9 +2,20 @@ import json
 import os
 
 # Path to the rule database
-RULE_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "src", "assets", "gr_clean.json")
+RULE_DB_PATH = os.path.join(os.path.dirname(__file__), "gr_clean.json")
 
 def load_rules():
+    print(f"Loading rules from: {RULE_DB_PATH}")
+    if not os.path.exists(RULE_DB_PATH):
+        print(f"ERROR: Rule database NOT found at {RULE_DB_PATH}")
+        # Try fallback to original location just in case
+        fallback = os.path.join(os.path.dirname(__file__), "..", "src", "assets", "gr_clean.json")
+        if os.path.exists(fallback):
+            print(f"Found fallback at {fallback}")
+            with open(fallback, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return []
+        
     with open(RULE_DB_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -90,6 +101,7 @@ def matches_trigger(trigger_obj, patient_data):
     return match_count / total_triggers
 
 def get_recommendations(patient_data):
+    print(f"Generating recommendations for data: {json.dumps(patient_data)}")
     rules = load_rules()
     vikriti = patient_data.get("vikriti", {})
     primary_dosha, secondary_dosha = get_dosha_dominance(vikriti)
