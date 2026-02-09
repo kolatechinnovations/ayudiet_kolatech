@@ -121,6 +121,27 @@ def scan_nails():
         traceback.print_exc()
         return jsonify({"error": "Server Crash", "details": str(e)}), 500
 
+@app.route("/recommendations", methods=["POST", "OPTIONS"])
+def get_recommendations():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True}), 200
+        
+    try:
+        try:
+            from rule_engine import get_recommendations as compute_recommendations
+        except ImportError as e:
+            return jsonify({"error": "Rule Engine Not Found", "details": str(e)}), 500
+            
+        data = request.json
+        if not data:
+            return jsonify({"error": "No patient data provided"}), 400
+            
+        recommendations = compute_recommendations(data)
+        return jsonify(recommendations)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": "Recommendation Analysis Failed", "details": str(e)}), 500
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

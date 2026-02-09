@@ -1,0 +1,5246 @@
+[
+  {
+    "rule_id": "VR_CONSTIPATION_01",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_GAS_BLOATING_02",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.1
+  },
+  {
+    "rule_id": "VR_BURNING_ACIDITY_03",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_LOOSE_STOOLS_04",
+    "trigger": {
+      "symptoms": [
+        "Loose stools / diarrhea"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HEAVINESS_AFTER_MEALS_05",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HEAVINESS_AFTER_MEALS_05",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HEAVINESS_AFTER_MEALS_05",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HETU_COLD_DRY_FOODS_01",
+    "trigger": {
+      "hetu": [
+        "Cold, dry foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HETU_SPICY_HOT_FOODS_02",
+    "trigger": {
+      "hetu": [
+        "Spicy, hot foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_HEAVY_OILY_FOODS_03",
+    "trigger": {
+      "hetu": [
+        "Heavy, oily foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_IRREGULAR_MEALS_04",
+    "trigger": {
+      "hetu": [
+        "Irregular meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HETU_OVEREATING_05",
+    "trigger": {
+      "hetu": [
+        "Overeating"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_SKIPPING_MEALS_06",
+    "trigger": {
+      "hetu": [
+        "Skipping meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_01",
+    "trigger": {
+      "agni": [
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana",
+          "Amla"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_01",
+    "trigger": {
+      "agni": [
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_01",
+    "trigger": {
+      "agni": [
+        "Tikshnagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla (excess)"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_AGNI_COLD_GAS_01",
+    "trigger": {
+      "agni": [
+        "Cold intolerance + gas"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Ushna",
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Shita",
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_POST_MEAL_BURNING_01",
+    "trigger": {
+      "agni": [
+        "Burning after meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_HEAVY_POST_MEAL_01",
+    "trigger": {
+      "agni": [
+        "Heavy post-meal feeling"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_MANDAGNI_01",
+    "trigger": {
+      "agni": [
+        "Vishamagni",
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_VISHAMAGNI_01",
+    "trigger": {
+      "agni": [
+        "Mandagni",
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_TIKSHNAGNI_01",
+    "trigger": {
+      "agni": [
+        "Vishamagni",
+        "Tikshnagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_MANDAGNI_01",
+    "trigger": {
+      "agni": [
+        "Tikshnagni",
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_AGNI_COLD_GAS_MANDAGNI_01",
+    "trigger": {
+      "agni": [
+        "Cold intolerance + gas",
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Ushna",
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Shita",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_BURNING_VISHAMAGNI_01",
+    "trigger": {
+      "agni": [
+        "Burning after meals",
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_VATA_DRY_SYMPTOMS_01",
+    "trigger": {
+      "physical_signs": [
+        "Dry skin, cracking joints, tremors"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_VATA_CONSTIPATION_GAS_02",
+    "trigger": {
+      "physical_signs": [
+        "Constipation, gas"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_VATA_EMOTIONAL_RESTLESSNESS_03",
+    "trigger": {
+      "physical_signs": [
+        "Anxiety, fear, restlessness"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.1
+  },
+  {
+    "rule_id": "VR_VATA_SLEEP_04",
+    "trigger": {
+      "physical_signs": [
+        "Light, broken sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_PITTA_HEAT_RASHES_01",
+    "trigger": {
+      "physical_signs": [
+        "Heat intolerance, rashes"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_PITTA_ACID_LOOSE_02",
+    "trigger": {
+      "physical_signs": [
+        "Acid reflux, loose stools"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_PITTA_ANGER_03",
+    "trigger": {
+      "physical_signs": [
+        "Anger, irritability"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_PITTA_SWEAT_THIRST_04",
+    "trigger": {
+      "physical_signs": [
+        "Excess sweating, thirst"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_KAPHA_WEIGHT_EDEMA_01",
+    "trigger": {
+      "physical_signs": [
+        "Weight gain, edema"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_KAPHA_SLUGGISH_MUCUS_02",
+    "trigger": {
+      "physical_signs": [
+        "Sluggish digestion, mucus"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_KAPHA_LETHARGY_ATTACHMENT_03",
+    "trigger": {
+      "physical_signs": [
+        "Lethargy, attachment"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_KAPHA_CONGESTION_04",
+    "trigger": {
+      "physical_signs": [
+        "Congestion, sinus"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_SEASON_SHISHIRA_01",
+    "trigger": {
+      "season": [
+        "Cold & Dry (Shishira)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Katu"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_SEASON_VASANTA_02",
+    "trigger": {
+      "season": [
+        "Hot & Intense (Vasanta)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SEASON_GRISHMA_03",
+    "trigger": {
+      "season": [
+        "Hot & Intense (Grishma)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_SEASON_VARSHA_04",
+    "trigger": {
+      "season": [
+        "Cold & Damp (Varsha)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SEASON_SHARAD_05",
+    "trigger": {
+      "season": [
+        "Hot & Intense (Sharad)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Amla"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_SEASON_HEMANTA_06",
+    "trigger": {
+      "season": [
+        "Cold & Dry (Hemanta)"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Katu"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_LIFESTYLE_IRREGULAR_ROUTINE_01",
+    "trigger": {
+      "lifestyle": [
+        "Irregular routine"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_LIFESTYLE_STRESS_TRAVEL_02",
+    "trigger": {
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_LIFESTYLE_EXCESS_SUN_HEAT_03",
+    "trigger": {
+      "lifestyle": [
+        "Excess sun / heat"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_LIFESTYLE_SEDENTARY_04",
+    "trigger": {
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_LIFESTYLE_EXCESS_DAY_SLEEP_05",
+    "trigger": {
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_HEAVINESS_MANDAGNI_01",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "agni": [
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HEAVINESS_VISHAMAGNI_02",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "agni": [
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_VISHAMAGNI_03",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "agni": [
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_MANDAGNI_04",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "agni": [
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_GAS_VISHAMAGNI_05",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "agni": [
+        "Vishamagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_GAS_COLD_INTOLERANCE_06",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "agni": [
+        "Cold intolerance + gas"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [],
+        "guna": [],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": []
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_BURNING_TIKSHNAGNI_07",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "agni": [
+        "Tikshnagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_DIARRHEA_TIKSHNAGNI_08",
+    "trigger": {
+      "symptoms": [
+        "Loose stools / diarrhea"
+      ],
+      "agni": [
+        "Tikshnagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SLUGGISH_MANDAGNI_09",
+    "trigger": {
+      "symptoms": [
+        "Sluggish digestion"
+      ],
+      "agni": [
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_POOR_APPETITE_MANDAGNI_10",
+    "trigger": {
+      "symptoms": [
+        "Poor appetite"
+      ],
+      "agni": [
+        "Mandagni"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_COLD_DRY_01",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "hetu": [
+        "Cold, dry foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Amla"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_GAS_IRREGULAR_MEALS_02",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "hetu": [
+        "Irregular meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_BURNING_SPICY_HOT_03",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "hetu": [
+        "Spicy, hot foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HEAVINESS_HEAVY_OILY_04",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "hetu": [
+        "Heavy, oily foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SLUGGISH_OVEREATING_05",
+    "trigger": {
+      "symptoms": [
+        "Sluggish digestion"
+      ],
+      "hetu": [
+        "Overeating"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_POOR_APPETITE_SKIPPING_06",
+    "trigger": {
+      "symptoms": [
+        "Poor appetite"
+      ],
+      "hetu": [
+        "Skipping meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_DIARRHEA_SPICY_HOT_07",
+    "trigger": {
+      "symptoms": [
+        "Loose stools / diarrhea"
+      ],
+      "hetu": [
+        "Spicy, hot foods"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_GAS_OVEREATING_08",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "hetu": [
+        "Overeating"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_BURNING_IRREGULAR_MEALS_09",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "hetu": [
+        "Irregular meals"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_COLD_DRY_01",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_HOT_INTENSE_02",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Lavana"
+        ],
+        "guna": [
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_GAS_COLD_DAMP_03",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_BURNING_HOT_INTENSE_04",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_DIARRHEA_HOT_INTENSE_05",
+    "trigger": {
+      "symptoms": [
+        "Loose stools / diarrhea"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Kashaya"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HEAVINESS_COLD_DAMP_06",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SLUGGISH_HOT_INTENSE_07",
+    "trigger": {
+      "symptoms": [
+        "Sluggish digestion"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_POOR_APPETITE_COLD_DRY_08",
+    "trigger": {
+      "symptoms": [
+        "Poor appetite"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Shita",
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_CONSTIPATION_SEDENTARY_01",
+    "trigger": {
+      "symptoms": [
+        "Constipation"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_GAS_STRESS_TRAVEL_02",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_BURNING_EXCESS_SUN_HEAT_03",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "lifestyle": [
+        "Excess sun / heat"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HEAVINESS_SEDENTARY_04",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_SLUGGISH_DAY_SLEEP_05",
+    "trigger": {
+      "symptoms": [
+        "Sluggish digestion"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_POOR_APPETITE_STRESS_TRAVEL_06",
+    "trigger": {
+      "symptoms": [
+        "Poor appetite"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_DIARRHEA_EXCESS_SUN_HEAT_07",
+    "trigger": {
+      "symptoms": [
+        "Loose stools / diarrhea"
+      ],
+      "lifestyle": [
+        "Excess sun / heat"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Kashaya",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_GAS_DAY_SLEEP_08",
+    "trigger": {
+      "symptoms": [
+        "Gas & bloating"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_BURNING_SEDENTARY_09",
+    "trigger": {
+      "symptoms": [
+        "Burning / acidity"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HEAVINESS_EXCESS_SUN_HEAT_10",
+    "trigger": {
+      "symptoms": [
+        "Heaviness after meals"
+      ],
+      "lifestyle": [
+        "Excess sun / heat"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_COLD_DRY_01",
+    "trigger": {
+      "agni": [
+        "Mandagni"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_HOT_INTENSE_02",
+    "trigger": {
+      "agni": [
+        "Mandagni"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Madhura"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Lavana",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_COLD_DAMP_03",
+    "trigger": {
+      "agni": [
+        "Vishamagni"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Ushna",
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_HOT_INTENSE_04",
+    "trigger": {
+      "agni": [
+        "Vishamagni"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Madhura"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_COLD_DRY_05",
+    "trigger": {
+      "agni": [
+        "Tikshnagni"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_HOT_INTENSE_06",
+    "trigger": {
+      "agni": [
+        "Tikshnagni"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_COLD_DRY_IRREGULAR_01",
+    "trigger": {
+      "hetu": [
+        "Cold, dry foods"
+      ],
+      "lifestyle": [
+        "Irregular routine"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_SPICY_STRESS_02",
+    "trigger": {
+      "hetu": [
+        "Spicy, hot foods"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_HEAVY_OILY_SEDENTARY_03",
+    "trigger": {
+      "hetu": [
+        "Heavy, oily foods"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_IRREGULAR_DAY_SLEEP_04",
+    "trigger": {
+      "hetu": [
+        "Irregular meals"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_OVEREATING_SEDENTARY_05",
+    "trigger": {
+      "hetu": [
+        "Overeating"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_SKIPPING_STRESS_06",
+    "trigger": {
+      "hetu": [
+        "Skipping meals"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_COLD_DRY_DAY_SLEEP_07",
+    "trigger": {
+      "hetu": [
+        "Cold, dry foods"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Madhura"
+        ],
+        "guna": [
+          "Ushna",
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Shita",
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_SPICY_SEDENTARY_08",
+    "trigger": {
+      "hetu": [
+        "Spicy, hot foods"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_HEAVY_OILY_STRESS_09",
+    "trigger": {
+      "hetu": [
+        "Heavy, oily foods"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_IRREGULAR_SEDENTARY_10",
+    "trigger": {
+      "hetu": [
+        "Irregular meals"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_SEDENTARY_01",
+    "trigger": {
+      "agni": [
+        "Mandagni"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_MANDAGNI_STRESS_TRAVEL_02",
+    "trigger": {
+      "agni": [
+        "Mandagni"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_SEDENTARY_03",
+    "trigger": {
+      "agni": [
+        "Vishamagni"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_AGNI_VISHAMAGNI_DAY_SLEEP_04",
+    "trigger": {
+      "agni": [
+        "Vishamagni"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.2
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_EXCESS_SUN_HEAT_05",
+    "trigger": {
+      "agni": [
+        "Tikshnagni"
+      ],
+      "lifestyle": [
+        "Excess sun / heat"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_TIKSHNAGNI_SEDENTARY_06",
+    "trigger": {
+      "agni": [
+        "Tikshnagni"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_COLD_GAS_SEDENTARY_07",
+    "trigger": {
+      "agni": [
+        "Cold intolerance + gas"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Ushna",
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [],
+        "guna": [
+          "Shita",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": []
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_AGNI_COLD_GAS_STRESS_08",
+    "trigger": {
+      "agni": [
+        "Cold intolerance + gas"
+      ],
+      "lifestyle": [
+        "Excess stress / travel"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_BURNING_SEDENTARY_09",
+    "trigger": {
+      "agni": [
+        "Burning after meals"
+      ],
+      "lifestyle": [
+        "Sedentary lifestyle"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_AGNI_HEAVY_POST_MEAL_DAY_SLEEP_10",
+    "trigger": {
+      "agni": [
+        "Heavy post-meal feeling"
+      ],
+      "lifestyle": [
+        "Excess daytime sleep"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_COLD_DRY_COLD_DRY_01",
+    "trigger": {
+      "hetu": [
+        "Cold, dry foods"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Kashaya"
+        ],
+        "guna": [
+          "Ruksha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Kashaya"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_COLD_DRY_HOT_INTENSE_02",
+    "trigger": {
+      "hetu": [
+        "Cold, dry foods"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Katu"
+        ],
+        "guna": [
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_SPICY_HOT_HOT_INTENSE_03",
+    "trigger": {
+      "hetu": [
+        "Spicy, hot foods"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu",
+          "Lavana"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_HEAVY_OILY_COLD_DAMP_04",
+    "trigger": {
+      "hetu": [
+        "Heavy, oily foods"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ruksha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_IRREGULAR_MEALS_COLD_DAMP_05",
+    "trigger": {
+      "hetu": [
+        "Irregular meals"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_OVEREATING_HOT_INTENSE_06",
+    "trigger": {
+      "hetu": [
+        "Overeating"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Snigdha",
+          "Guru"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.5
+  },
+  {
+    "rule_id": "VR_HETU_SKIPPING_MEALS_COLD_DRY_07",
+    "trigger": {
+      "hetu": [
+        "Skipping meals"
+      ],
+      "season": [
+        "Cold & Dry"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Shita",
+          "Ruksha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_HEAVY_OILY_HOT_INTENSE_08",
+    "trigger": {
+      "hetu": [
+        "Heavy, oily foods"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Tikta",
+          "Katu"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_HETU_IRREGULAR_MEALS_HOT_INTENSE_09",
+    "trigger": {
+      "hetu": [
+        "Irregular meals"
+      ],
+      "season": [
+        "Hot & Intense"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
+    "rule_id": "VR_HETU_SPICY_HOT_COLD_DAMP_10",
+    "trigger": {
+      "hetu": [
+        "Spicy, hot foods"
+      ],
+      "season": [
+        "Cold & Damp"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Madhura",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Amla",
+          "Katu"
+        ],
+        "guna": [
+          "Ushna",
+          "Tikshna",
+          "Shita"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      }
+    },
+    "weight": 1.4
+  }
+]
