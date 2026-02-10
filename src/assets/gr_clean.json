@@ -298,6 +298,94 @@
     "weight": 1.2
   },
   {
+    "rule_id": "VR_SLUGGISH_DIGESTION_06",
+    "trigger": {
+      "symptoms": [
+        "Sluggish digestion"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Tikta"
+        ],
+        "guna": [
+          "Laghu",
+          "Ushna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Lavana",
+          "Amla"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha",
+          "Shita"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.4
+  },
+  {
+    "rule_id": "VR_POOR_APPETITE_07",
+    "trigger": {
+      "symptoms": [
+        "Poor appetite"
+      ]
+    },
+    "prefer": {
+      "increase": {
+        "rasa": [
+          "Katu",
+          "Amla"
+        ],
+        "guna": [
+          "Laghu",
+          "Tikshna"
+        ],
+        "virya": [
+          "Ushna"
+        ],
+        "vipaka": [
+          "Katu"
+        ]
+      },
+      "avoid": {
+        "rasa": [
+          "Madhura",
+          "Kashaya"
+        ],
+        "guna": [
+          "Guru",
+          "Snigdha"
+        ],
+        "virya": [
+          "Shita"
+        ],
+        "vipaka": [
+          "Madhura"
+        ]
+      }
+    },
+    "weight": 1.3
+  },
+  {
     "rule_id": "VR_HETU_COLD_DRY_FOODS_01",
     "trigger": {
       "hetu": [

@@ -23,6 +23,8 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
     lifestyle_flags: vikriti.lifestyle_flags
   } : null;
 
+  const [selectedRule, setSelectedRule] = useState(null);
+
   const fetchRecommendations = async () => {
     setLoadingRules(true);
     try {
@@ -58,8 +60,103 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
     alert('Copied to clipboard!');
   };
 
+  const renderDetailSection = (title, data, type) => {
+    if (!data || Object.keys(data).length === 0) return null;
+    
+    return (
+      <div style={{ marginBottom: '1.5rem' }}>
+        <h4 style={{ 
+          fontSize: '0.9rem', 
+          textTransform: 'uppercase', 
+          color: type === 'increase' ? '#2c5f50' : '#ff6b6b',
+          borderBottom: `1px solid ${type === 'increase' ? 'rgba(44, 95, 80, 0.2)' : 'rgba(255, 107, 107, 0.2)'}`,
+          paddingBottom: '4px',
+          marginBottom: '10px'
+        }}>
+          {title}
+        </h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '8px' }}>
+          {Object.entries(data).map(([key, values]) => (
+            <div key={key} style={{ background: 'rgba(255,255,255,0.05)', padding: '8px', borderRadius: '6px' }}>
+              <div style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--text-light)', opacity: 0.6, textTransform: 'uppercase' }}>{key}</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>{Array.isArray(values) ? values.join(', ') : values}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="card">
+      {/* Detail Modal Overlay */}
+      {selectedRule && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0,0,0,0.8)',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem',
+          backdropFilter: 'blur(5px)'
+        }} onClick={() => setSelectedRule(null)}>
+          <div style={{
+            background: 'var(--card-bg)',
+            width: '100%',
+            maxWidth: '600px',
+            maxHeight: '90vh',
+            borderRadius: '16px',
+            overflow: 'auto',
+            padding: '2rem',
+            position: 'relative',
+            border: '1px solid rgba(255,255,255,0.1)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+          }} onClick={e => e.stopPropagation()}>
+            <button 
+              onClick={() => setSelectedRule(null)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                opacity: 0.5
+              }}
+            >
+              ×
+            </button>
+
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-light)', opacity: 0.6 }}>{selectedRule.category}</span>
+            <h2 style={{ margin: '8px 0', fontSize: '1.6rem', color: 'var(--primary-color)' }}>{selectedRule.rule_id.replace('VR_', '').replace(/_/g, ' ')}</h2>
+            <p style={{ margin: '1rem 0', lineHeight: '1.5' }}>{selectedRule.why}</p>
+            
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '12px', marginBottom: '2rem' }}>
+                <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', opacity: 0.5 }}>Triggering Factors</span>
+                <div style={{ marginTop: '4px', fontSize: '0.9rem' }}>{selectedRule.trigger_factor}</div>
+            </div>
+
+            {renderDetailSection("✅ Recommendations (Increase/Favor)", selectedRule.details?.increase, 'increase')}
+            {renderDetailSection("🚫 Avoid (Minimize)", selectedRule.details?.avoid, 'avoid')}
+
+            <button 
+              className="btn btn-primary" 
+              onClick={() => setSelectedRule(null)}
+              style={{ width: '100%', marginTop: '1rem' }}
+            >
+              Close Details
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="section-badge">{vikriti ? 'Full Ayurveda Profile' : 'Stage 1: Prakriti Complete'}</div>
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -146,20 +243,34 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
                   </h2>
                   <div style={{ display: 'grid', gap: '1rem', marginTop: '1.5rem' }}>
                       {recommendations.map((rule) => (
-                          <div key={rule.rule_id} className="vikriti-item" style={{ background: rule.type === 'Primary' ? 'rgba(44, 95, 80, 0.05)' : 'rgba(0,0,0,0.02)', borderLeft: `4px solid ${rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)'}` }}>
-                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                                  <div>
-                                      <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-light)', opacity: 0.6 }}>{rule.category}</span>
-                                      <div style={{ fontWeight: 700, fontSize: '1.1rem', margin: '4px 0' }}>{rule.why}</div>
-                                      <div style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>
-                                          <strong>Factor:</strong> {rule.trigger_factor}
-                                      </div>
-                                  </div>
-                                  <div style={{ textAlign: 'right' }}>
-                                      <div style={{ background: rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>{rule.type}</div>
-                                      <div style={{ fontSize: '0.75rem', marginTop: '4px', opacity: 0.5 }}>Weight: {rule.final_weight}</div>
-                                  </div>
-                              </div>
+                          <div 
+                            key={rule.rule_id} 
+                            className="vikriti-item" 
+                            onClick={() => setSelectedRule(rule)}
+                            style={{ 
+                                background: rule.type === 'Primary' ? 'rgba(44, 95, 80, 0.05)' : 'rgba(0,0,0,0.02)', 
+                                borderLeft: `4px solid ${rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)'}`,
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s, box-shadow 0.2s',
+                                hover: { transform: 'translateY(-2px)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }
+                            }}
+                          >
+                               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                   <div>
+                                       <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-light)', opacity: 0.6 }}>{rule.category}</span>
+                                       <div style={{ fontWeight: 700, fontSize: '1.1rem', margin: '4px 0' }}>{rule.why}</div>
+                                       <div style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>
+                                           <strong>Factor:</strong> {rule.trigger_factor}
+                                       </div>
+                                       <div style={{ fontSize: '0.75rem', color: 'var(--primary-color)', fontWeight: 600, marginTop: '8px' }}>
+                                           View Details →
+                                       </div>
+                                   </div>
+                                   <div style={{ textAlign: 'right' }}>
+                                       <div style={{ background: rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>{rule.type}</div>
+                                       <div style={{ fontSize: '0.75rem', marginTop: '4px', opacity: 0.5 }}>Weight: {rule.final_weight}</div>
+                                   </div>
+                               </div>
                           </div>
                       ))}
                   </div>

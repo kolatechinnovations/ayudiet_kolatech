@@ -20,39 +20,33 @@ def load_rules():
         return json.load(f)
 
 def get_dosha_dominance(vikriti):
-    # vikriti: { vata_score, pitta_score, kapha_score }
+    # vikriti: { vata_score, pitta_score, kapha_score } or { vata_percentage, ... }
+    def get_score(key):
+        return vikriti.get(key) or vikriti.get(f"{key}_percentage") or vikriti.get(f"{key}_score") or 0
+
     scores = [
-        ("vata", vikriti.get("vata", 0)),
-        ("pitta", vikriti.get("pitta", 0)),
-        ("kapha", vikriti.get("kapha", 0))
+        ("vata", get_score("vata")),
+        ("pitta", get_score("pitta")),
+        ("kapha", get_score("kapha"))
     ]
     scores.sort(key=lambda x: x[1], reverse=True)
     primary = scores[0][0]
     secondary = scores[1][0]
     return primary, secondary
 
+def standardize(s):
+    if not isinstance(s, str): return s
+    # Standardize common variations (Underscores to spaces, handle "Food" vs "foods")
+    s = s.replace("_", " ")
+    if "Food" in s and "foods" not in s:
+        s = s.replace("Food", "foods")
+    return s.strip()
+
 def get_dosha_relevance(rule, primary_dosha):
-    # This is a simplified mapping. In a real scenario, we'd look at rule attributes
-    # For now, we'll check rule_id or tags if available.
-    # But based on instructions: "Pacifies dominant dosha -> +0.2", "Aggravates dominant dosha -> -0.3"
-    # We need to determine if a rule pacifies or aggravates.
-    
-    # Heuristic: 
-    # Vata rules often have "VR_VATA" or mention Vata triggers.
-    # VR_CONSTIPATION_01 might be Vata-aggravating if ignored? 
-    # Actually, the instructions say: 
-    # "Prefer rules that pacify dominant dosha"
-    # "Avoid rules that aggravate dominant dosha"
-    
-    # We can check the 'rule_id' for dosha names.
+    # Determine if a rule pacifies or aggravates based on keywords
     rule_id = rule.get("rule_id", "").upper()
-    
     if primary_dosha.upper() in rule_id:
         return 0.2  # Pacifies (assuming rules in DB are corrective)
-    
-    # If rule is for another dosha but triggers match, it might be neutral
-    # or we could check attributes (guna/rasa) if we had a mapping.
-    # For this implementation, we'll check the rule_id for primary/secondary keywords.
     return 0.0
 
 def matches_trigger(trigger_obj, patient_data):
@@ -62,37 +56,52 @@ def matches_trigger(trigger_obj, patient_data):
     match_count = 0
     total_triggers = 0
     
+    # Pre-standardize patient data lists
+    patient_symptoms = [standardize(s) for s in patient_data.get("symptoms", [])]
+    patient_hetu = [standardize(h) for h in patient_data.get("hetu", [])]
+    patient_lifestyle = [standardize(l) for l in patient_data.get("lifestyle_flags", [])]
+    patient_season = standardize(patient_data.get("season", ""))
+    
+    # Handle Agni (can be nested or flat)
+    patient_agni_obj = patient_data.get("agni", {})
+    if isinstance(patient_agni_obj, dict):
+        p_agni_primary = patient_agni_obj.get("primary")
+        p_agni_secondary = patient_agni_obj.get("secondary")
+    else:
+        p_agni_primary = None
+        p_agni_secondary = None
+    
+    # Also check top-level agni_primary/secondary
+    p_agni_primary = p_agni_primary or patient_data.get("agni_primary")
+    p_agni_secondary = p_agni_secondary or patient_data.get("agni_secondary")
+    
+    p_agni_list = [standardize(a) for a in [p_agni_primary, p_agni_secondary] if a]
+
     for key, values in trigger_obj.items():
         if not values: continue
         total_triggers += 1
         
+        # Standardize trigger values from DB
+        std_values = [standardize(v) for v in values]
+        
         if key == "symptoms":
-            patient_symptoms = patient_data.get("symptoms", [])
-            if any(s in patient_symptoms for s in values):
+            if any(s in patient_symptoms for s in std_values):
                 match_count += 1
         elif key == "agni":
-            patient_agni = patient_data.get("agni", {})
-            primary_agni = patient_agni.get("primary")
-            secondary_agni = patient_agni.get("secondary")
-            if any(a in [primary_agni, secondary_agni] for a in values):
+            if any(a in p_agni_list for a in std_values):
                 match_count += 1
         elif key == "hetu":
-            patient_hetu = patient_data.get("hetu", [])
-            if any(h in patient_hetu for h in values):
+            if any(h in patient_hetu for h in std_values):
                 match_count += 1
         elif key == "season":
-            patient_season = patient_data.get("season", "")
-            if patient_season in values:
+            if patient_season in std_values:
                 match_count += 1
         elif key == "lifestyle":
-            patient_lifestyle = patient_data.get("lifestyle_flags", [])
-            if any(l in patient_lifestyle for l in values):
+            if any(l in patient_lifestyle for l in std_values):
                 match_count += 1
         elif key == "physical_signs":
-             # physical_signs might be in symptoms or a separate field if we added it
-             # For now, treat symptoms as a superset if physical_signs is used in rules
-             patient_symptoms = patient_data.get("symptoms", [])
-             if any(s in patient_symptoms for s in values):
+             # physical_signs often maps to symptoms in the simplified data
+             if any(s in patient_symptoms for s in std_values):
                  match_count += 1
 
     if total_triggers == 0:
@@ -148,7 +157,8 @@ def get_recommendations(patient_data):
             "why": explanation,
             "trigger_factor": ", ".join(trigger_matches) if trigger_matches else category,
             "final_weight": final_weight,
-            "type": "Primary" if final_weight > 1.2 else "Supporting"
+            "type": "Primary" if final_weight > 1.2 else "Supporting",
+            "details": rule.get("prefer", {})
         }
         selected_rules.append(rule_info)
 
