@@ -66,20 +66,40 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
     return (
       <div style={{ marginBottom: '1.5rem' }}>
         <h4 style={{ 
-          fontSize: '0.9rem', 
+          fontSize: '0.85rem', 
+          fontWeight: 800,
           textTransform: 'uppercase', 
-          color: type === 'increase' ? '#2c5f50' : '#ff6b6b',
-          borderBottom: `1px solid ${type === 'increase' ? 'rgba(44, 95, 80, 0.2)' : 'rgba(255, 107, 107, 0.2)'}`,
-          paddingBottom: '4px',
-          marginBottom: '10px'
+          color: type === 'increase' ? 'var(--primary-color)' : '#e11d48',
+          background: type === 'increase' ? '#f0fdf4' : '#fff1f2',
+          padding: '6px 12px',
+          borderRadius: '8px',
+          display: 'inline-block',
+          marginBottom: '12px'
         }}>
           {title}
         </h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '8px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px' }}>
           {Object.entries(data).map(([key, values]) => (
-            <div key={key} style={{ background: 'rgba(255,255,255,0.05)', padding: '8px', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--text-light)', opacity: 0.6, textTransform: 'uppercase' }}>{key}</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>{Array.isArray(values) ? values.join(', ') : values}</div>
+            <div key={key} style={{ 
+              background: '#f8fafc', 
+              padding: '10px', 
+              borderRadius: '12px',
+              border: '1px solid #f1f5f9'
+            }}>
+              <div style={{ 
+                fontSize: '0.65rem', 
+                fontWeight: 800, 
+                color: 'var(--text-light)', 
+                opacity: 0.7, 
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '2px'
+              }}>{key}</div>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: 700,
+                color: 'var(--text-dark)'
+              }}>{Array.isArray(values) ? values.join(', ') : values}</div>
             </div>
           ))}
         </div>
@@ -97,50 +117,105 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'rgba(0,0,0,0.8)',
+          background: 'rgba(0,0,0,0.6)',
           zIndex: 1000,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '1rem',
-          backdropFilter: 'blur(5px)'
+          backdropFilter: 'blur(8px)'
         }} onClick={() => setSelectedRule(null)}>
           <div style={{
-            background: 'var(--card-bg)',
+            background: 'var(--white)',
             width: '100%',
-            maxWidth: '600px',
+            maxWidth: '550px',
             maxHeight: '90vh',
-            borderRadius: '16px',
+            borderRadius: '24px',
             overflow: 'auto',
-            padding: '2rem',
+            padding: '2.5rem',
             position: 'relative',
-            border: '1px solid rgba(255,255,255,0.1)',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            border: 'none',
+            color: 'var(--text-dark)'
           }} onClick={e => e.stopPropagation()}>
             <button 
               onClick={() => setSelectedRule(null)}
               style={{
                 position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                background: 'none',
+                top: '1.2rem',
+                right: '1.2rem',
+                background: '#f1f5f9',
                 border: 'none',
-                color: 'white',
-                fontSize: '1.5rem',
+                color: 'var(--text-light)',
+                fontSize: '1.2rem',
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 cursor: 'pointer',
-                opacity: 0.5
+                transition: 'all 0.2s'
               }}
             >
               ×
             </button>
 
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-light)', opacity: 0.6 }}>{selectedRule.category}</span>
-            <h2 style={{ margin: '8px 0', fontSize: '1.6rem', color: 'var(--primary-color)' }}>{selectedRule.rule_id.replace('VR_', '').replace(/_/g, ' ')}</h2>
-            <p style={{ margin: '1rem 0', lineHeight: '1.5' }}>{selectedRule.why}</p>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <span style={{ 
+                fontSize: '0.75rem', 
+                fontWeight: 800, 
+                textTransform: 'uppercase', 
+                color: 'var(--primary-color)', 
+                background: 'rgba(44, 95, 80, 0.1)',
+                padding: '4px 10px',
+                borderRadius: '6px'
+              }}>
+                {selectedRule.category}
+              </span>
+              <h2 style={{ 
+                margin: '12px 0 8px 0', 
+                fontSize: '1.8rem', 
+                fontWeight: 800,
+                color: 'var(--text-dark)',
+                lineHeight: 1.2
+              }}>
+                {selectedRule.rule_id.replace('VR_', '').replace(/_/g, ' ')}
+              </h2>
+              <p style={{ 
+                fontSize: '1rem', 
+                color: 'var(--text-light)', 
+                lineHeight: '1.6',
+                margin: 0 
+              }}>
+                {selectedRule.why}
+              </p>
+            </div>
             
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '12px', marginBottom: '2rem' }}>
-                <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', opacity: 0.5 }}>Triggering Factors</span>
-                <div style={{ marginTop: '4px', fontSize: '0.9rem' }}>{selectedRule.trigger_factor}</div>
+            <div style={{ 
+              background: '#f8fafc', 
+              padding: '1.2rem', 
+              borderRadius: '16px', 
+              marginBottom: '2rem',
+              border: '1px solid #e2e8f0'
+            }}>
+                <span style={{ 
+                  fontSize: '0.7rem', 
+                  fontWeight: 700, 
+                  textTransform: 'uppercase', 
+                  color: 'var(--text-light)',
+                  display: 'block',
+                  marginBottom: '4px'
+                }}>
+                  Triggering Factors
+                </span>
+                <div style={{ 
+                  fontSize: '0.95rem', 
+                  fontWeight: 600,
+                  color: 'var(--text-dark)' 
+                }}>
+                  {selectedRule.trigger_factor}
+                </div>
             </div>
 
             {renderDetailSection("✅ Recommendations (Increase/Favor)", selectedRule.details?.increase, 'increase')}
@@ -149,7 +224,13 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
             <button 
               className="btn btn-primary" 
               onClick={() => setSelectedRule(null)}
-              style={{ width: '100%', marginTop: '1rem' }}
+              style={{ 
+                width: '100%', 
+                marginTop: '1rem',
+                padding: '1rem',
+                fontSize: '1.1rem',
+                borderRadius: '12px'
+              }}
             >
               Close Details
             </button>
