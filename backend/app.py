@@ -142,6 +142,50 @@ def get_recommendations():
         traceback.print_exc()
         return jsonify({"error": "Recommendation Analysis Failed", "details": str(e)}), 500
 
+@app.route("/food-recommendations", methods=["POST", "OPTIONS"])
+def get_food_recommendations():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True}), 200
+        
+    try:
+        from rule_engine import get_recommendations as compute_recommendations
+        from scoring_engine import calculate_food_scores
+        import json
+        
+        data = request.json
+        if not data:
+            return jsonify({"error": "No patient data provided"}), 400
+            
+        # 1. Get Selected Rules
+        selected_rules = compute_recommendations(data)
+        
+        # 2. Format rules for scoring engine
+        formatted_rules = []
+        for r in selected_rules:
+            formatted_rules.append({
+                "rule_id": r.get("rule_id"),
+                "prefer": r.get("details", {}),
+                "weight": r.get("final_weight", 1.0)
+            })
+            
+        # 3. Load Food Data
+        food_data_path = os.path.join(os.path.dirname(__file__), "food_data", "food_cleaned.json")
+        if not os.path.exists(food_data_path):
+            return jsonify({"error": "Food dataset not found"}), 500
+            
+        with open(food_data_path, "r", encoding="utf-8") as f:
+            food_dataset = json.load(f)
+            
+        # 4. Calculate Scores
+        scored_foods = calculate_food_scores(food_dataset, formatted_rules, apply_confidence=True)
+        
+        # Return top 20 foods
+        return jsonify(scored_foods[:20])
+        
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": "Food Recommendation Failed", "details": str(e)}), 500
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

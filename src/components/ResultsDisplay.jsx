@@ -5,6 +5,8 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
   const [showJson, setShowJson] = useState(false);
   const [recommendations, setRecommendations] = useState(null);
   const [loadingRules, setLoadingRules] = useState(false);
+  const [recommendedFoods, setRecommendedFoods] = useState(null);
+  const [loadingFoods, setLoadingFoods] = useState(false);
 
   // Prepare structured objects for display
   const prakritiObject = {
@@ -52,6 +54,36 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
         alert(`Failed to fetch dietary rules: ${error.message}`);
     } finally {
         setLoadingRules(false);
+    }
+  };
+
+  const fetchFoodRecommendations = async () => {
+    setLoadingFoods(true);
+    try {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+        const response = await fetch(`${apiUrl}/food-recommendations`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(vikritiObject)
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.details || errorData.error || 'Server error');
+        }
+
+        const data = await response.json();
+        if (Array.isArray(data)) {
+            setRecommendedFoods(data);
+        } else {
+            console.error("Expected array of foods, got:", data);
+            alert("Received invalid data from server.");
+        }
+    } catch (error) {
+        console.error("Error fetching foods:", error);
+        alert(`Failed to fetch food recommendations: ${error.message}`);
+    } finally {
+        setLoadingFoods(false);
     }
   };
 
@@ -320,7 +352,7 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
           {recommendations && (
               <section style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
                    <h2 className="question-text" style={{ textAlign: 'center', fontSize: '1.8rem' }}>
-                      Your Ayurvedic Dietary Rules
+                       Your Ayurvedic Dietary Rules
                   </h2>
                   <div style={{ display: 'grid', gap: '1rem', marginTop: '1.5rem' }}>
                       {recommendations.map((rule) => (
@@ -332,8 +364,7 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
                                 background: rule.type === 'Primary' ? 'rgba(44, 95, 80, 0.05)' : 'rgba(0,0,0,0.02)', 
                                 borderLeft: `4px solid ${rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)'}`,
                                 cursor: 'pointer',
-                                transition: 'transform 0.2s, box-shadow 0.2s',
-                                hover: { transform: 'translateY(-2px)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }
+                                transition: 'transform 0.2s, box-shadow 0.2s'
                             }}
                           >
                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -350,6 +381,69 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
                                    <div style={{ textAlign: 'right' }}>
                                        <div style={{ background: rule.type === 'Primary' ? 'var(--primary-color)' : 'var(--accent-color)', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>{rule.type}</div>
                                        <div style={{ fontSize: '0.75rem', marginTop: '4px', opacity: 0.5 }}>Weight: {rule.final_weight}</div>
+                                   </div>
+                               </div>
+                          </div>
+                      ))}
+                  </div>
+              </section>
+          )}
+
+          {recommendedFoods && (
+              <section style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
+                   <h2 className="question-text" style={{ textAlign: 'center', fontSize: '1.8rem' }}>
+                       Selected Superfoods for You
+                  </h2>
+                  <p style={{ textAlign: 'center', color: 'var(--text-light)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
+                      Highly recommended foods based on your specific clinical patterns and digestion.
+                  </p>
+                  <div style={{ 
+                      display: 'grid', 
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                      gap: '12px', 
+                      marginTop: '1.5rem' 
+                  }}>
+                      {recommendedFoods.map((food, idx) => (
+                          <div 
+                            key={idx} 
+                            style={{ 
+                                background: 'white', 
+                                padding: '1.2rem', 
+                                borderRadius: '16px',
+                                border: '1px solid #e2e8f0',
+                                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}
+                          >
+                               <div style={{ 
+                                   fontSize: '0.7rem', 
+                                   fontWeight: 800, 
+                                   textTransform: 'uppercase', 
+                                   color: food.final_score >= 8 ? 'var(--primary-color)' : 'var(--accent-color)',
+                                   marginBottom: '4px'
+                               }}>
+                                   {food.category}
+                               </div>
+                               <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-dark)' }}>
+                                   {food.food_name}
+                               </div>
+                               <div style={{ 
+                                   display: 'flex', 
+                                   justifyContent: 'space-between', 
+                                   alignItems: 'center',
+                                   marginTop: 'auto',
+                                   paddingTop: '12px'
+                               }}>
+                                   <div style={{ fontSize: '0.75rem', opacity: 0.6 }}>Score: {food.final_score}</div>
+                                   <div style={{ 
+                                       fontSize: '0.65rem', 
+                                       background: '#f1f5f9', 
+                                       padding: '2px 6px', 
+                                       borderRadius: '4px',
+                                       fontWeight: 600
+                                   }}>
+                                       {food.known_properties}/4 Data
                                    </div>
                                </div>
                           </div>
@@ -380,6 +474,17 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
                 style={{ background: '#2c5f50', display: 'flex', alignItems: 'center', gap: '8px' }}
             >
                 {loadingRules ? 'Analyzing...' : '🥗 See Your Selected Rules'}
+            </button>
+        )}
+
+        {recommendations && !recommendedFoods && (
+            <button 
+                className="btn btn-primary" 
+                onClick={fetchFoodRecommendations} 
+                disabled={loadingFoods}
+                style={{ background: '#7c2d12', borderColor: '#7c2d12', display: 'flex', alignItems: 'center', gap: '8px' }}
+            >
+                {loadingFoods ? 'Calculating...' : '🍎 Show Selected Food'}
             </button>
         )}
         

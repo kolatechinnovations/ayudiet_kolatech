@@ -1,0 +1,2314 @@
+[
+  {
+    "food_name": "Haritaki",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Bibhitaka",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Amalaki",
+    "rasa": [
+      "Amla",
+      "Madhura",
+      "Kashaya"
+    ],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Shunthi",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Adraka",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Pippali",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Maricha",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chitraka",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Ruksha",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Chitraka",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Chitraka (Red)",
+    "rasa": [],
+    "guna": [
+      "Ruchikari",
+      "Rasayana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chitraka (Blue)",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Ajwain",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Tikshna",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Ajmoda",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Wild Ajwain (Type 1)",
+    "rasa": [],
+    "guna": [
+      "Deepana",
+      "Pachana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Wild Ajwain (Type 2)",
+    "rasa": [],
+    "guna": [
+      "Grahi"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Parsik Yavani",
+    "rasa": [],
+    "guna": [
+      "Grahi",
+      "Madini"
+    ],
+    "virya": [],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Jeeraka (White)",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Laghu"
+    ]
+  },
+  {
+    "food_name": "Jeeraka (Black)",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kalonji",
+    "rasa": [],
+    "guna": [
+      "Vatanulomaka"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Dhanyaka",
+    "rasa": [
+      "Kashaya",
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Snigdha",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Soya",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Laghu"
+    ]
+  },
+  {
+    "food_name": "Saunf",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Methi",
+    "rasa": [],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Vanamethi",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chandrasura",
+    "rasa": [],
+    "guna": [
+      "Balya"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Hing",
+    "rasa": [],
+    "guna": [
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Vacha",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Ugragandha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Parsik Vacha",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kulanjan",
+    "rasa": [],
+    "guna": [
+      "Sugandha",
+      "Ugragandha",
+      "Ruchya"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Mahabhari Vacha",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chopchini",
+    "rasa": [
+      "Tikta (kinchit)"
+    ],
+    "guna": [
+      "Deepana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Hapusha",
+    "rasa": [
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Mridu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Vayavidanga",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Tikshna",
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Laghu"
+    ]
+  },
+  {
+    "food_name": "Vidanga Bheda",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nadi Hingu",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Tumburu",
+    "rasa": [
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Ruksha",
+      "Tikshna",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Tirphal",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Vanshalochana",
+    "rasa": [
+      "Madhura",
+      "Kashaya"
+    ],
+    "guna": [
+      "Brimhana",
+      "Balya",
+      "Vrishya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Samudraphena",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Lekhana",
+      "Chakshushya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Samudraphena",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Lekhana",
+      "Chakshushya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Ashtavarga (group)",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana",
+      "Shukrala",
+      "Guru"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Jivaka",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Balya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Rishabhaka",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Balya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Meda",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Mahameda",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Kakoli",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Kshirakakoli",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Riddhi",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Balya"
+    ],
+    "virya": [],
+    "vipaka": [
+      "Guru"
+    ]
+  },
+  {
+    "food_name": "Vriddhi",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Brimhana",
+      "Vrishya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Yashtimadhu",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Guru",
+      "Snigdha"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kampilla",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Rechaka"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Aragvadha",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Guru"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kutaki",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Ruksha",
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Kiratatikta",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Ruksha",
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Indrayava",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Sangrahi",
+      "Deepana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Madana",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Lekhana",
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Rasna",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Guru"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nakuli",
+    "rasa": [
+      "Kashaya",
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Machika (Small Mai)",
+    "rasa": [
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi",
+      "Balya"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Machika (Big Mai)",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi",
+      "Stambhana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Machika (Patua)",
+    "rasa": [
+      "Amla"
+    ],
+    "guna": [
+      "Rechaka",
+      "Ruchikara"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Tejavati",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Pachana",
+      "Deepana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Jyotishmati",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Sara",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ati-ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kushta",
+    "rasa": [
+      "Katu",
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Shukrala"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Pushkaramula",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Katupurni",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Rechaka",
+      "Bhedana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Karkatashringi",
+    "rasa": [
+      "Kashaya",
+      "Tikta"
+    ],
+    "guna": [
+      "Grahi",
+      "Balya"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Katphala",
+    "rasa": [
+      "Kashaya",
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Grahi",
+      "Swedajana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Bharangi",
+    "rasa": [
+      "Katu",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Ruksha",
+      "Laghu",
+      "Deepana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Bharangi",
+    "rasa": [],
+    "guna": [],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Pashanbheda",
+    "rasa": [
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Dhataki",
+    "rasa": [
+      "Katu",
+      "Kashaya"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Manjishtha",
+    "rasa": [
+      "Madhura",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Guru"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kusumbha",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Laksha",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Snigdha",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Haridra",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Amaharidra",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Vanaharidra",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Daruharidra",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Daruharidra",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Balya",
+      "Tikta poshthika",
+      "Deepana",
+      "Pachana",
+      "Grahi",
+      "Pittavirechaka",
+      "Swedala",
+      "Shleshmahara",
+      "Rasayana",
+      "Tvakdoshahara"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Rasaut",
+    "rasa": [
+      "Katu",
+      "Kashaya"
+    ],
+    "guna": [
+      "Poshthika",
+      "Jvarahara",
+      "Paryayika jvarahara",
+      "Swedala",
+      "Ashoja",
+      "Shodhagna",
+      "Raktashodhaka",
+      "Shleshmahara",
+      "Vranaropaka",
+      "Netravikarahara"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Bakuchi",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Rasayani",
+      "Ruchya",
+      "Sara",
+      "Ruksha",
+      "Hridya"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Bakuchi (Fruit)",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Keshya",
+      "Tvachya"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chakramarda",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chakramarda (Fruit)",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Ativisha",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Pachana",
+      "Deepana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Lodhra",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi",
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Pathani Lodhra",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi",
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Lashuna",
+    "rasa": [
+      "Katu",
+      "Tikta",
+      "Kashaya",
+      "Lavana",
+      "Madhura"
+    ],
+    "guna": [
+      "Snigdha",
+      "Tikshna",
+      "Guru",
+      "Vrishya",
+      "Rasayana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu",
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Ekputiya Lashuna",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Piyaj",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Guru"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Jangli Piyaj",
+    "rasa": [],
+    "guna": [
+      "Hridyojaka",
+      "Virechaka",
+      "Utklashak",
+      "Vamanakaraka"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Bhallataka",
+    "rasa": [
+      "Kashaya",
+      "Madhura"
+    ],
+    "guna": [
+      "Laghu",
+      "Snigdha",
+      "Tikshna",
+      "Bhedana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Bhallataka (Phala)",
+    "rasa": [
+      "Madhura",
+      "Kashaya"
+    ],
+    "guna": [
+      "Laghu",
+      "Snigdha",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Bhanga",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Grahi",
+      "Pachani",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Poppy Capsule",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Nidrajanaka",
+      "Madaka",
+      "Vedanahara",
+      "Grahi",
+      "Raktastambhaka"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Afim",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Ruksha",
+      "Vedanahara",
+      "Nidrajanaka",
+      "Madaka",
+      "Grahi"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Saindhava Namak",
+    "rasa": [],
+    "guna": [
+      "Ruchikaraka",
+      "Agnideepaka",
+      "Pachaka",
+      "Vatanulomaka",
+      "Netraya",
+      "Vranashoshaka"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sambhar Namak",
+    "rasa": [],
+    "guna": [
+      "Laghu",
+      "Bhedi",
+      "Pitta-kara",
+      "Tikshna",
+      "Sukshma",
+      "Abhishyandi"
+    ],
+    "virya": [
+      "Ati-ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Samudra Namak",
+    "rasa": [
+      "Madhura (pake)",
+      "Tikta (mixed)"
+    ],
+    "guna": [
+      "Guru",
+      "Deepana",
+      "Bhedi",
+      "Avidahi",
+      "Shleshmala",
+      "Tikshna"
+    ],
+    "virya": [],
+    "vipaka": [
+      "Madhura"
+    ]
+  },
+  {
+    "food_name": "Vida Lavana",
+    "rasa": [],
+    "guna": [
+      "Deepana",
+      "Laghu",
+      "Tikshna",
+      "Ruchya",
+      "Vyavayi"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sauvarchala Lavana",
+    "rasa": [],
+    "guna": [
+      "Rochana",
+      "Bhedi",
+      "Deepana",
+      "Pachana",
+      "Laghu",
+      "Sukshma"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Khanija Lavana",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Guru",
+      "Snigdha"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chanak Amlaka",
+    "rasa": [
+      "Lavana-anurasa"
+    ],
+    "guna": [
+      "Ruchya",
+      "Deepana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chanakhar",
+    "rasa": [
+      "Lavana-anurasa"
+    ],
+    "guna": [
+      "Ruchikaraka",
+      "Deepana"
+    ],
+    "virya": [
+      "Ati-ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Yavakshara",
+    "rasa": [],
+    "guna": [
+      "Laghu",
+      "Snigdha",
+      "Sukshma",
+      "Agnideepana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sajjikshara",
+    "rasa": [],
+    "guna": [
+      "Deepana",
+      "Pachana",
+      "Mutrala",
+      "Kaphanisarak"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sora",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Tikshna",
+      "Mutravirechaniya",
+      "Swedajanana",
+      "Shleshmadhara"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Tankana",
+    "rasa": [],
+    "guna": [
+      "Ruksha",
+      "Kaphahara",
+      "Agnikaraka"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chuka",
+    "rasa": [
+      "Amla"
+    ],
+    "guna": [
+      "Deepana",
+      "Pachana",
+      "Sara"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Karpura",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Lekhana",
+      "Surabhi"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chinak Karpura",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Kaphakshaya",
+      "Kushtahara",
+      "Kanduhara"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chinak Karpura",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Vatahara",
+      "Deepana",
+      "Kaphagna",
+      "Kasahara",
+      "Jvaraghna",
+      "Swedajanana",
+      "Stanyanashana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kasturi",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Guru",
+      "Kshara",
+      "Vishyandana",
+      "Hridaya-bala-prada"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Lata Kasturi",
+    "rasa": [
+      "Tikta",
+      "Swadu"
+    ],
+    "guna": [
+      "Laghu",
+      "Chedini",
+      "Netrya"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Gandhamarjara Virya",
+    "rasa": [],
+    "guna": [
+      "Viryakrit",
+      "Kaphavata-hara",
+      "Kanduhara",
+      "Kushtahara",
+      "Netrya",
+      "Sugandha"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Javad Kasturi",
+    "rasa": [],
+    "guna": [
+      "Ushna",
+      "Vrishya",
+      "Netrya",
+      "Sugandhi",
+      "Uttējaka"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Shveta Chandan",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Ruksha",
+      "Laghu",
+      "Ahladana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Pita Chandan",
+    "rasa": [],
+    "guna": [
+      "Rakta-guna"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Rakta Chandan",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Guru"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Patanga",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Agaru",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Devadaru",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Sarala",
+    "rasa": [
+      "Madhura",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu",
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Tagara",
+    "rasa": [
+      "Swadu"
+    ],
+    "guna": [
+      "Snigdha",
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Padmaka",
+    "rasa": [
+      "Tuvra",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Guggul",
+    "rasa": [],
+    "guna": [
+      "Rasayana",
+      "Tridoshaghna",
+      "Vrishya",
+      "Vashya",
+      "Snehana",
+      "Shansana",
+      "Vatanulomaka",
+      "Amasayochchajaka",
+      "Dipana"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sarala Niryasa",
+    "rasa": [
+      "Madhura",
+      "Tikta",
+      "Tuvra"
+    ],
+    "guna": [
+      "Snigdha",
+      "Sara"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Rala",
+    "rasa": [
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Guru",
+      "Grahika"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kunduru",
+    "rasa": [
+      "Madhura",
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Tikshna",
+      "Tvachya"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Shilarasa",
+    "rasa": [
+      "Katu",
+      "Swadu"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Jatiphala",
+    "rasa": [
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Laghu",
+      "Rochana"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Jatipatri",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Lavanga",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sthula Ela",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Sukshma Ela",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Chhoti Elaichi",
+    "rasa": [
+      "Katu"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Tvak (Taj)",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Darusita (Dalchini)",
+    "rasa": [
+      "Swadu",
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Tejpatra",
+    "rasa": [
+      "Madhura"
+    ],
+    "guna": [
+      "Laghu",
+      "Picchila"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nagakesara",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Keshar",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Gorochana",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nakh",
+    "rasa": [
+      "Katu (in paka & rasa)"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Sugandhavala",
+    "rasa": [],
+    "guna": [
+      "Laghu",
+      "Ruksha"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Virana",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Ushira (Khus)",
+    "rasa": [
+      "Tikta",
+      "Madhura"
+    ],
+    "guna": [
+      "Laghu",
+      "Stambhana"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Jatamansi",
+    "rasa": [
+      "Tikta",
+      "Kashaya",
+      "Swadu"
+    ],
+    "guna": [
+      "Medhya",
+      "Kantivalaprada"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Shaileya",
+    "rasa": [],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Mustaka",
+    "rasa": [
+      "Katu",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Grahi"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nagara Mustaka",
+    "rasa": [],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kachura",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Mura",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Kapoor Kachari",
+    "rasa": [
+      "Katu",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [
+      "Laghu",
+      "Grahi",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Priyangu",
+    "rasa": [
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Priyangu Phala",
+    "rasa": [
+      "Madhura",
+      "Kashaya"
+    ],
+    "guna": [
+      "Guru",
+      "Ruksha"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Renuka",
+    "rasa": [
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Granthiparna",
+    "rasa": [
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Laghu",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sthauneyaka",
+    "rasa": [
+      "Katu",
+      "Tikta"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Choraka",
+    "rasa": [
+      "Madhura",
+      "Tikta",
+      "Katu"
+    ],
+    "guna": [
+      "Laghu",
+      "Tikshna"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Talisapatra",
+    "rasa": [],
+    "guna": [
+      "Laghu",
+      "Tikshna"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Shitalachini (Kababchini)",
+    "rasa": [],
+    "guna": [],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Gandhakokila",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Snigdha"
+    ],
+    "virya": [
+      "Ushna"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Gandhamalati",
+    "rasa": [],
+    "guna": [],
+    "virya": [],
+    "vipaka": []
+  },
+  {
+    "food_name": "Lamajjaka",
+    "rasa": [
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Elavaluka",
+    "rasa": [
+      "Kashaya"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": [
+      "Katu"
+    ]
+  },
+  {
+    "food_name": "Kaivarti Mustaka",
+    "rasa": [
+      "Katu",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Sprikka",
+    "rasa": [
+      "Swadu",
+      "Tikta"
+    ],
+    "guna": [],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Parpati",
+    "rasa": [
+      "Kashaya",
+      "Tikta"
+    ],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Nalika",
+    "rasa": [],
+    "guna": [
+      "Laghu"
+    ],
+    "virya": [
+      "Sheeta"
+    ],
+    "vipaka": []
+  },
+  {
+    "food_name": "Prapaundarika",
+    "rasa": [
+      "Madhura",
+      "Tikta",
+      "Kashaya"
+    ],
+    "guna": [],
+    "virya": [
+      "Hima"
+    ],
+    "vipaka": [
+      "Madhura"
+    ]
+  }
+]
