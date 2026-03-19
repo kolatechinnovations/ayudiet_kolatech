@@ -142,6 +142,27 @@ def get_recommendations():
         traceback.print_exc()
         return jsonify({"error": "Recommendation Analysis Failed", "details": str(e)}), 500
 
+@app.route("/standardize", methods=["POST", "OPTIONS"])
+def standardize_text():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True}), 200
+    
+    try:
+        from rule_engine import standardize
+        data = request.json
+        if not data or "text" not in data:
+            return jsonify({"error": "No text provided"}), 400
+        
+        # If it's a list of strings, standardize each one
+        if isinstance(data["text"], list):
+            standardized = [standardize(t) for t in data["text"]]
+        else:
+            standardized = standardize(data["text"])
+            
+        return jsonify({"original": data["text"], "standardized": standardized})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route("/food-recommendations", methods=["POST", "OPTIONS"])
 def get_food_recommendations():
     if request.method == "OPTIONS":

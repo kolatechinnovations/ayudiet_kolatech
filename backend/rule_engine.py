@@ -36,10 +36,10 @@ def get_dosha_dominance(vikriti):
 
 def standardize(s):
     if not isinstance(s, str): return s
-    # Standardize common variations (Underscores to spaces, handle "Food" vs "foods")
-    s = s.replace("_", " ")
-    if "Food" in s and "foods" not in s:
-        s = s.replace("Food", "foods")
+    # Standardize common variations
+    s = s.replace("_", " ").lower()
+    if "food" in s and "foods" not in s:
+        s = s.replace("food", "foods")
     return s.strip()
 
 def get_dosha_relevance(rule, primary_dosha):
