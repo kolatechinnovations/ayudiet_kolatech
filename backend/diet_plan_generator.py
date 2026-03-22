@@ -1,14 +1,14 @@
 import requests
 import json
 import os
+import re
 
 # OpenRouter Configuration
 OPENROUTER_API_KEY = "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"
 MODELS = [
-    "mistralai/mistral-7b-instruct",
-    "meta-llama/llama-3-8b-instruct",
-    "nousresearch/nous-hermes-2-mixtral",
-    "google/gemma-7b-it"
+    "openai/gpt-4o-mini",
+    "anthropic/claude-3-haiku",
+    "meta-llama/llama-3-70b-instruct"
 ]
 
 SYSTEM_PROMPT = """You are an expert Ayurvedic diet planner and clinical nutrition assistant.
@@ -103,7 +103,7 @@ Each meal array must contain:
   "preparation": ""
 }
 
-DO NOT output anything except valid JSON."""
+Return ONLY JSON. Do not include explanations. Ensure valid JSON format."""
 
 def generate_diet_plan(patient_data):
     """
@@ -125,22 +125,23 @@ def generate_diet_plan(patient_data):
                     "messages": [
                         {"role": "system", "content": SYSTEM_PROMPT},
                         {"role": "user", "content": user_prompt}
-                    ],
-                    "response_format": {"type": "json_object"}
+                    ]
                 }),
-                timeout=30
+                timeout=60
             )
             
             if response.status_code == 200:
                 result = response.json()
                 if "choices" in result and len(result["choices"]) > 0:
                     content = result["choices"][0]["message"]["content"]
+                    print(f"RAW RESPONSE from {model}:", content)
                     try:
-                        # Validate the JSON content
-                        plan = json.loads(content)
+                        # Clean and validate the JSON content
+                        cleaned = re.sub(r"```json|```", "", content).strip()
+                        plan = json.loads(cleaned)
                         return plan
                     except json.JSONDecodeError:
-                        print(f"Model {model} returned invalid JSON. Falling back...")
+                        print(f"Model {model} returned invalid JSON even after cleaning. Falling back...")
                         continue
                 else:
                     print(f"Model {model} returned no choices. Falling back...")
