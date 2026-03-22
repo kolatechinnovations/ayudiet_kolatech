@@ -164,7 +164,7 @@ def standardize_text():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/generate-diet-plan", methods=["POST", "OPTIONS"])
+@app.route("/generate_diet_plan", methods=["POST", "OPTIONS"])
 def get_diet_plan():
     if request.method == "OPTIONS":
         return jsonify({"ok": True}), 200
