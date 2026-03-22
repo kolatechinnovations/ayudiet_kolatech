@@ -7,6 +7,7 @@ import sys
 import traceback
 import io
 from PIL import Image
+from diet_plan_generator import generate_diet_plan
 
 app = Flask(__name__)
 
@@ -163,6 +164,27 @@ def standardize_text():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route("/generate-diet-plan", methods=["POST", "OPTIONS"])
+def get_diet_plan():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True}), 200
+        
+    try:
+        data = request.json
+        if not data:
+            return jsonify({"error": "No patient data provided"}), 400
+            
+        plan = generate_diet_plan(data)
+        
+        if "error" in plan:
+            return jsonify(plan), 500
+            
+        return jsonify(plan)
+        
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": "Diet Plan Generation Failed", "details": str(e)}), 500
+
 @app.route("/food-recommendations", methods=["POST", "OPTIONS"])
 def get_food_recommendations():
     if request.method == "OPTIONS":
@@ -206,6 +228,7 @@ def get_food_recommendations():
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": "Food Recommendation Failed", "details": str(e)}), 500
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
