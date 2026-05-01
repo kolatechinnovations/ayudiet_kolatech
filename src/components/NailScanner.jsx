@@ -25,7 +25,7 @@ const NailScanner = ({ onScanComplete, onCancel }) => {
     setError(null);
     
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://ayudiet-kolatech.onrender.com';
       const response = await axios.post(`${apiUrl}/scan/nails`, {
         image: imgSrc
       });

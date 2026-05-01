@@ -30,7 +30,7 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
   const fetchRecommendations = async () => {
     setLoadingRules(true);
     try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://ayudiet-kolatech.onrender.com';
         const response = await fetch(`${apiUrl}/recommendations`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -60,7 +60,7 @@ const ResultsDisplay = ({ result, vikriti, onReset, onNext }) => {
   const fetchFoodRecommendations = async () => {
     setLoadingFoods(true);
     try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://ayudiet-kolatech.onrender.com';
         const response = await fetch(`${apiUrl}/food-recommendations`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
